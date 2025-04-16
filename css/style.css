@@ -1381,9 +1381,8 @@ select::-ms-expand {
 
 .contact-form__textbox {
   max-width: 500px;
-  margin-left: auto;
+  margin-left: 23.75%;
   margin-right: auto;
-  text-align: center;
 }
 
 .contact-form__heading {
@@ -1414,7 +1413,7 @@ select::-ms-expand {
 .contact-form__button {
   max-width: 498px;
   width: 100%;
-  margin-left: auto;
+  margin-left: 19.3333333333%;
   margin-right: auto;
 }
 
@@ -1555,7 +1554,7 @@ select::-ms-expand {
 .radio__input {
   display: flex;
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 18px;
 }
 @media screen and (max-width: 768px) {
   .radio__input {
@@ -1600,11 +1599,16 @@ select::-ms-expand {
 
 .contact-form__button {
   margin-top: 33px;
+  margin-left: 37.7333333333%;
 }
 @media screen and (max-width: 768px) {
   .contact-form__button {
     margin-top: 13px;
   }
+}
+
+.form__button.button {
+  margin-inline: 0;
 }
 
 .form__button {
@@ -1649,8 +1653,8 @@ select::-ms-expand {
   max-width: 850px;
   padding-left: 25px;
   padding-right: 25px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 19.3055555556%;
+  margin-right: 21.6666666667%;
 }
 @media screen and (max-width: 768px) {
   .inner-mini {

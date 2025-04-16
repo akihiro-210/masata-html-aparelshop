@@ -1143,9 +1143,8 @@
 
 .contact-form__textbox{
     max-width: 500px;
-    margin-left: auto;
+    margin-left: calc(100% * 190/800);
     margin-right: auto;
-    text-align: center;
 }
 
 .contact-form__heading{
@@ -1175,7 +1174,7 @@
 .contact-form__button{
     max-width: 498px;
     width: 100%;
-    margin-left: auto;
+    margin-left: calc(100% * 145/750);
     margin-right: auto;
 }
 
@@ -1288,7 +1287,7 @@
 .radio__input{
     display: flex;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 18px;
     @include mq("md"){
         margin-left: 0;
         margin-top: 8px;
@@ -1331,9 +1330,14 @@
 
 .contact-form__button{
     margin-top: 33px;
+    margin-left: calc(100% * 283/750);
     @include mq("md"){
         margin-top: 13px;
     }
+}
+
+.form__button.button{
+    margin-inline: 0;
 }
 
 .form__button{
@@ -1375,8 +1379,8 @@
     max-width: 850px;
     padding-left: 25px;
     padding-right: 25px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: calc(100% * 278/1440);
+    margin-right: calc(100% * 312/1440);
     @include mq("md"){
         padding-left: 15px;
         padding-right: 15px;
