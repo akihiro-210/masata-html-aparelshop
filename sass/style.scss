@@ -1,0 +1,1486 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+// ヘッダー
+
+.header{
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 95px;
+    background-color: transparent;
+    border-bottom: 1px solid $gray-title-line;
+    @include mq("lg"){
+        height: 75px;
+    }
+}
+
+.header.headerColorScroll{
+    background-color: $black;
+    transition: background-color 1s ease;
+}
+
+.header__inner{
+    display: flex;
+    padding: 0 20px;
+    height: inherit;
+    align-items: center;
+    @include mq("lg"){
+        padding: 0 15px;
+    }
+}
+
+.header__logo{
+    width: 171px;
+    color: $white;
+    @include mq("lg"){
+        width: 132px;
+    }
+}
+.header__nav{
+    height: inherit;
+    margin-left: calc(100% * 425/1400);
+    margin-right: auto;
+}
+
+.header__items{
+    height: inherit;
+    display: flex;
+}
+
+.header__item{
+    height: inherit;
+}
+
+.header__item:not(:first-child){
+    margin-left: 36px;
+}
+
+.header__link{
+    color: $white;
+    font-size: 18px;
+    font-weight: $medium;
+    line-height: calc(22/28);
+}
+
+.nav__item.header__link{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__link.header__link--contact{
+    padding: 12px 32px;
+    border-radius: 3px;
+    border: 1px solid $white;
+    color: $white;
+    line-height: calc(22/18);
+}
+
+// ハンバーガーメニュー
+
+.hamburger{
+    position: fixed;
+    z-index: 9999;
+    top: 29px;
+    right: 15px;
+    width: 25px;
+    height: 16px;
+    cursor: pointer;
+    transition: 1s transform;
+}
+
+.hamburger span{
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    transition: 1s transform,1s background-color;
+}
+
+.hamburger span:nth-child(1){
+    top: 0;
+}
+
+.hamburger span:nth-child(2){
+    top: 8px;
+}
+
+.hamburger span:nth-child(3){
+    top: 16px;
+}
+
+.hamburger.is-active span:nth-child(1){
+    -webkit-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3){
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+// ドロワーメニュー
+
+.drawer-menu{
+    position: absolute;
+    z-index: 5000;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: $black, $alpha: 0.9);
+}
+
+.js-drawer{
+    transition: all 1s ease;
+}
+
+.drawer-menu__inner{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawer-menu__items{
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer-menu__item{
+    display: inline-block;
+    width: 198px;
+    text-align: center;
+    line-height: 1.222;
+}
+
+.drawer-menu__item:not(:first-child){
+    margin-top: 50px;
+}
+
+.drawer-menu__link{
+    font-size: 18px;
+    font-weight: $medium;
+    color: $white;
+}
+
+.drawer-menu__icon{
+    padding-left: 24px;
+    position: relative;
+}
+
+.drawer-menu__icon::before{
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    content: "";
+    background-image: url(../images/section-icon-img.svg);
+    background-position: center;
+    background-size: contain;
+    width: 14px;
+    height: 14px;
+    display: block;
+}
+
+.drawer-menu__link--contact{
+    display: inline-block;
+    width: 198px;
+    text-align: center;
+    padding: 14px;
+    border: 1px solid $white;
+    border-radius: 6px;
+}
+
+
+// インデックス
+// ファーストビュー
+
+.fv{
+    width: 100%;
+    height: 100vh;
+}
+
+.fv__inner{
+    position: relative;
+    width: 100%;
+    height: inherit;
+}
+
+.fv__swiper,
+.swiper-slide picture,
+.swiper-slide img{
+    height: inherit;
+}
+
+.swiper-slide img{
+    object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+    width: 34px;
+    height: 34px;
+    background-color: rgba($color: $white2, $alpha: 0.06);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after{
+    position: absolute;
+    top: 40%;
+    left: 38%;
+    width: 5px;
+    height: 5px;
+    content: "";
+    transform: rotate(45deg);
+    border-top: 1px solid $white;
+    border-right: 1px solid $white;
+}
+
+.swiper-button-prev::after{
+    top: 40%;
+    left: 44%;
+    transform: rotate(-135deg);
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    margin: 0;
+    top: calc(100% * 437/814);
+    left: 70px;
+    @include mq("lg"){
+        left: 40px;
+    }
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    margin: 0;
+    top: calc(100% * 437/814);
+    right: 70px;
+    @include mq("lg"){
+        right: 40px;
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: calc(100% * 30/814);
+    @include mq("md"){
+        bottom: 30px;
+    }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 10px 3px;
+    @include mq("md"){
+        margin: 0 5px;
+    }
+}
+
+.swiper-pagination-bullet{
+    width: 70px;
+    height: 4px;
+    border-radius: 0;
+    opacity: 1;
+    background-color: $gray-tag;
+    @include mq("md"){
+        width: 40px;
+    }
+}
+
+.swiper-pagination-bullet-active{
+    background-color: $white;
+}
+
+.fv__wrap{
+    position: absolute;
+    left: calc(100% * 205/1440);
+    top: calc(100% * 403/814);
+    z-index: 10;
+    @include mq("md"){
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.fv__text--large{
+    font-size: 54px;
+    font-weight: $medium;
+    letter-spacing: 0.05em;
+    line-height: 1.203;
+    @include mq("md"){
+        font-size: 36px;
+        letter-spacing: 0;
+        line-height: 1.222;
+        text-align: center;
+    }
+}
+
+.fv__text--small{
+    margin-top: 12px;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    line-height: 1.222;
+    @include mq("md"){
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 1.214;
+        text-align: center;
+        }
+}
+
+// アバウトセクション
+
+.about{
+    padding: 80px 0 79px;
+    background-color: $black-about;
+    @include mq("md"){
+        padding: 60px 0;
+    }
+}
+
+.about__wrap{
+    width: 100%;
+    max-width: 640px;
+    margin-top: 78px;
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md"){
+        margin-top: 52px;
+    }
+}
+
+.about__box{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 52px;
+    justify-content: center;
+    @include mq("md"){
+        grid-template-columns: auto;
+        row-gap: 40px;
+
+    }
+}
+
+.about__box-img{
+    max-width: 360px;
+    aspect-ratio: 36/50;
+    margin-inline: auto;
+    @include mq("md"){
+        aspect-ratio: 240/333;
+        order: 2;
+        @include mq("sp"){
+            max-width: 240px;
+        }
+    }
+}
+
+.about__box-text{
+    margin-top: 24px;
+    margin-inline: auto;
+    @include mq("md"){
+        order: 1;
+        margin-top: 0;
+    }
+}
+
+.about__text-vertical{
+    font-size: 22px;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.409em;
+    line-height: calc(41/22);
+    @include mq("md"){
+        font-size: 20px;
+        @include mq("sp"){
+            font-size: 14px;
+            line-height: 2.143;
+            letter-spacing: 0.285em;
+        }
+    }
+}
+
+.about__text{
+    margin-top: -60px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    line-height: 2;
+    font-weight: $light;
+    @include mq("sp"){
+        font-size: 14px;
+        margin-top: -80px;
+        line-height: 1.857;
+    }
+}
+
+.about__button{
+    margin-top: 40px;
+    width: 204px;
+    padding: 16px 57px 20px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    line-height: 1.188;
+    border-radius: 6px;
+    font-family: "Noto Serif JP",sans-serif;
+    @include mq("md"){
+        margin-top: 30px;
+        width: 173px;
+        height: 48px;
+        padding: 14px 40px;
+        font-size: 14px;
+        line-height: 1.214;
+    }
+}
+
+// サービスセクション
+.service{
+    padding: 80px 0;
+    background-color: $black;
+    @include mq("md"){
+        padding: 60px 0;
+    }
+}
+
+.service__tab{
+    margin-top: 48px;
+    width: 100%;
+    max-width: 1080px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md"){
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.tab__list{
+    text-align: center;
+}
+
+.tab__button{
+    color: $white;
+    padding:0 0 8px;
+    position: relative;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    line-height: calc(19/16);
+    @include mq("md"){
+        padding-bottom: 4px;
+        font-size: 14px;
+        line-height: 1.214;
+    }
+}
+
+.tab__button:not(:first-child){
+    margin-left: 55px;
+    @include mq("md"){
+        margin-left: 45px;
+    }
+}
+
+.tab__button::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -2px;
+    display: block;
+    height: 1px;
+    background-color: $gray-service-modal;
+}
+
+.tab__button.is-active::after{
+    background-color: $white-service-modal;
+}
+
+.tab__button1::after{
+    width: 170px;
+    @include mq("md"){
+        width: 148px;
+    }
+}
+
+.tab__button2::after{
+    width: 137px;
+    @include mq("md"){
+        width: 119px;
+    }
+}
+
+.tab__content{
+    display: none;
+}
+
+.tab__content.is-active{
+    display: block;
+}
+
+.service__cards{
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    column-gap: 20px;
+    row-gap: 40px;
+    @include mq("md"){
+        margin-inline: auto;
+    }
+}
+
+.service__card{
+    box-shadow: 3px 3px 6px rgba($color: $shadow, $alpha: 0.75);
+}
+
+.card__img-body{
+    position: relative;
+}
+
+.card__img-tag{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 7px 0 6px;
+    background-color: $gray-tag;
+    display: inline-block;
+    text-align: center;
+    width: 79px;
+    font-size: 14px;
+    color: $white;
+    line-height: calc(17/14);
+    letter-spacing: 0.05em;
+}
+
+.card__img{
+    aspect-ratio: 33/37;
+    @include mq("md"){
+        aspect-ratio: 25/28;
+    }
+}
+
+.card__body{
+    padding: 16px 16px;
+}
+
+.card__name{
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    line-height: calc(19/16);
+    @include mq("md"){
+        font-size: 14px;
+    }
+}
+
+.card__text{
+    margin-top: 14px;
+    font-family: $second-font;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    line-height: 1.538;
+    @include mq("md"){
+        margin-top: 10px;
+    }
+}
+
+// ニュースセクション
+.news{
+    padding: 80px 0 80px;
+    background-color: $beige-news;
+    @include mq("md"){
+        padding: 60px 0;
+    }
+}
+
+.news__items{
+    margin-top: 38px;
+    width: 100%;
+    max-width: 1080px;
+    padding: 0 25px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md"){
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.news__item{
+    width: 100%;
+    padding-bottom: 26px;
+    @include mq("md"){
+        padding-bottom: 22px;
+    }
+}
+.news__item:not(:first-child){
+    margin-top: 27px;
+    @include mq("md"){
+        margin-top: 22px;
+    }
+}
+
+.news__item:not(:last-child){
+    border-bottom: 1px solid $gray-news-line;
+}
+
+.news__item:last-child{
+    padding-bottom: 0;
+}
+
+.news__item-link{
+    display: flex;
+    @include mq("md"){
+        display: block;
+    }
+}
+
+.news__item-box{
+    display: flex;
+    align-items: center;
+}
+
+.news__item-date,
+.news__item-tag,
+.news__item-title{
+    font-family: $second-font;
+}
+
+.news__item-date{
+    font-size: 14px;
+    letter-spacing: 0;
+    color: $black;
+    @include mq("md"){
+        font-size: 14px;
+    }
+}
+
+.news__item-tag{
+    font-size: 10px;
+    display: inline-block;
+    width: 88px;
+    text-align: center;
+    letter-spacing: 0;
+    margin-left: 30px;
+    padding: 6.5px 0 8.5px;
+    line-height: calc(12/10);
+    background-color: $gray-tag;
+    color: $white2;
+    @include mq("md"){
+        padding: 4.5px 20px;
+    }
+}
+
+.news__item-title{
+    margin-left: 30px;
+    font-size: 15px;
+    color: $black;
+    letter-spacing: 0;
+    @include mq("md"){
+        margin-left: 0;
+        margin-top: 22px;
+        font-size: 14px;
+    }
+}
+
+// コンタクトセクション
+.contact{
+    display: flex;
+}
+
+.contact__container1{
+    flex-basis: calc(100% * 770/1440);
+    padding: 80px 0 118px;
+    background-color: $black-about;
+    @include mq("lg"){
+        flex-basis: 100%;
+        background-image: url(../images/contact-img.jpg);
+        background-size: cover;
+        background-position: center;
+        @include mq("md"){
+            padding: 58px 0 80px;
+        }
+    }
+}
+
+.contact__inner{
+    width: 100%;
+    max-width: 675px;
+    padding-left: 25px;
+    padding-right: 50px;
+    margin-left: auto;
+    @include mq("lg"){
+    max-width: 1080px;
+    margin-right: auto;
+    padding-right: 25px;
+        @include mq("md"){
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.contact__text-box{
+    margin-top: 60px;
+    padding-left: calc(100% * 132/600);
+    padding-right: calc(100% * 202/600);
+}
+
+.contact__text{
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: calc(17/14);
+    @include mq("md"){
+        margin-top: 50px;
+        font-size: 13px;
+    }
+}
+
+.contact__button{
+    margin-top: 20px;
+    padding: 15.5px 0 19.5px;
+    max-width: 266px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    border-radius: 6px;
+    line-height: calc(19/16);
+    @include mq("md"){
+        margin-top: 18px;
+        padding: 14px 30px;
+        width: 227px;
+        font-size: 14px;
+    }
+}
+
+.contact__container2{
+    flex-basis: calc(100% * 670/1440);
+    aspect-ratio: 670 /399;
+    background-image: url(../images/contact-img.jpg);
+    background-size: cover;
+    background-position: center;
+    @include mq("lg"){
+        display: none;
+    }
+}
+
+// フッター
+.footer{
+    padding: 32px 0 31px;
+    background-color: $black;
+    @include mq("md"){
+        padding: 22px 0;
+    }
+}
+
+.footer__copyright{
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    color: $white;
+    font-family: $second-font;
+    letter-spacing: 0.05em;
+    line-height: 1.143;
+}
+
+// アバウトページ
+// ファーストビュー
+.about-fv{
+    width: 100%;
+}
+
+.about-fv__inner{
+    width: 100%;
+    height: inherit;
+    position: relative;
+}
+
+.about-fv__slide,
+.about-fv__slide picture,
+.about-fv__slide img{
+    height: inherit;
+}
+
+.about-fv__slide{
+    object-fit: cover;
+}
+
+.about-fv__title{
+    position: absolute;
+    top: calc(100% * 291/543);
+    left: 50%;
+    transform: translate(-50%,0%);
+    font-size: 46px;
+    letter-spacing: 0.05em;
+    line-height: calc(54/46);
+    @include mq("md"){
+        font-size: 36px;
+        font-weight: $medium;
+    }
+}
+
+// メッセージセクション
+.message{
+    padding: 80px 0 83px;
+    width: 100%;
+    background-color: $black-about;
+    @include mq("md"){
+        padding: 60px 0;
+    }
+}
+
+.message__textbox{
+    width: 100%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md"){
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.message__heading-main{
+    font-size: 24px;
+    font-weight: $medium;
+    letter-spacing: 0.05em;
+    line-height: 1.667;
+    text-align: center;
+    @include mq("md"){
+        font-size: 20px;
+        line-height: 1.733;
+        @include mq("sp"){
+            font-size: 15px;
+            line-height: 1.733;
+        }
+    }
+}
+
+.message__heading-sub{
+    margin-top: 30px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    line-height: 2;
+    text-align: center;
+    @include mq("md"){
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.857;
+        text-align: left;
+    }
+}
+
+.message__heading-sub,
+.message__text,
+.message__sign{
+    font-family: $second-font;
+}
+
+.message__container{
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: calc(100% * 290/644) calc(100% * 324/644);
+    column-gap: 30px;
+    width: 100%;
+    height: 447px;
+    max-width: 644px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md"){
+        grid-template-columns: 1fr;
+        row-gap: 18px;
+        height: auto;
+        margin-top: 60px;
+        padding-left: 47px;
+        padding-right: 47px;
+    }
+}
+
+
+
+.message__img{
+    max-width: 290px;
+    align-self: start;
+    box-shadow: 0px 4px 4px rgba($color: $black, $alpha: 0.25);
+    @include mq("md"){
+        max-width: 250px;
+    }
+}
+
+.message__body{
+    margin-top: 86px;
+    // align-self: end;
+}
+
+.message__text{
+    margin-top: 26px;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    @include mq("md"){
+        margin-top: 18px;
+    }
+}
+
+.message__sign{
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: calc(17/14);
+    letter-spacing: 0.05em;
+    margin-right: 7px;
+    text-align: right;
+    @include mq("md"){
+        margin-top: 8px;
+        text-align: left;
+    }
+}
+// message__container内の要素をそれぞれ上揃え下揃えにしたい
+
+// 会社概要セクション
+.company{
+    padding: 80px 0;
+    background-color: $black;
+    @include mq("md"){
+        padding: 60px 0;
+    }
+}
+
+.company__items{
+    width: 100%;
+    margin-top: 70px;
+    padding-left: 33px;
+    padding-right: 33px;
+    @include mq("md"){
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.company__item{
+    width: 100%;
+    padding-bottom: 18px;
+    border-bottom: 1px solid $gray-title-line;
+    display: flex;
+    @include mq("md"){
+        display: block;
+        padding-bottom: 25px;
+    }
+}
+
+.company__item:not(:first-child){
+    margin-top: 16px;
+    @include mq("md"){
+        margin-top: 22px;
+    }
+}
+
+.company__name,
+.company__text,
+.company__text-2,
+.company__map-icon{
+    font-size: 14px;
+    font-weight: $light;
+    font-family: $second-font;
+    letter-spacing: 0;
+    line-height: 1.214;
+}
+
+.company__textbox{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 19px;
+    @include mq("md"){
+        grid-template-columns: auto;
+        row-gap: 7px;
+    }
+}
+
+.company__name{
+    width: 132px;
+}
+
+.company__text{
+    @include mq("md"){
+        margin-top: 12px;
+    }
+}
+
+// .company__text-2{
+//     margin-left: 10px;
+//     @include mq("md"){
+//         margin-left: 0;
+//     }
+// }
+
+.company__map-icon{
+    cursor: pointer;
+}
+
+.company__map-underline{
+    border-bottom: 1px solid $white;
+    position: relative;
+}
+
+.company__map-underline::after{
+    position: absolute;
+    top: 4px;
+    right: -14px;
+    content: "";
+    display: block;
+    background-image: url(/images/map-icon.svg);
+    width: 10px;
+    height: 14px;
+}
+
+// モーダルマップ
+.company__modal{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: visibility 0.3s,opacity 0.3s;
+    opacity: 0;
+    background-color:rgba($color: $black, $alpha: 0.8);
+}
+
+.company__modal.is-open{
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal__body{
+    width: 460px;
+    height: 500px;
+    padding: 24px;
+    background-color: $white2;
+    position: relative;
+    @include mq("md"){
+        width: 268px;
+        height: 302px;
+        padding: 14px 14px 15px;
+    }
+}
+
+.modal__textbox{
+    display: flex;
+}
+
+.modal__text{
+    font-size: 15px;
+    letter-spacing: 0.05em;
+}
+
+.modal__close-button{
+    margin-top: 6px;
+    margin-left: auto;
+    position: relative;
+    display: block;
+    width: 13px;
+    height: 13px;
+}
+
+.modal__close-button::before,
+.modal__close-button::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 13px;
+    background-color: $black;
+    cursor: pointer;
+}
+
+.modal__close-button::before{
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+.modal__close-button::after{
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+.modal__map{
+    margin-top: 28px;
+    width: 412px;
+    height: 406px;
+    @include mq("md"){
+        margin-top: 13px;
+        width: 240px;
+        height: 240px;
+    }
+}
+
+.modal__map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+// コンタクトページ
+
+.contact-form{
+    width: 100%;
+    padding: 80px 0;
+    background-color: $black-about;
+    @include mq("md"){
+        padding: 60px 0;
+    }
+}
+
+.contact-form__textbox{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.contact-form__heading{
+    font-family: $second-font;
+    text-align: left;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: $light;
+    letter-spacing: 0.05em;
+    line-height: 1.867;
+}
+
+// コンタクトフォーム
+.contact-form-box{
+    margin-top: 22px;
+    width: 100%;
+    padding: 60px 25px;
+    background-color: $black-about;
+    box-shadow: 3px 3px 6px rgba($color: $shadow, $alpha: 0.75);
+    @include mq("md"){
+        margin-top: 20px;
+        padding: 40px 16px;
+    }
+}
+
+.form__list,
+.contact-form__button{
+    max-width: 498px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form__item{
+    width: 100%;
+}
+
+.form__item-mail{
+    margin-top: 22px;
+    @include mq("md"){
+        margin-top: 20px;
+    }
+}
+
+.form__item-radio{
+    margin-top: 35px;
+    @include mq("md"){
+        margin-top: 20px;
+    }
+}
+
+.form__item-textarea{
+    margin-top: 35px;
+    @include mq("md"){
+        margin-top: 20px;
+    }
+}
+
+.form__item dl{
+    display: flex;
+    flex-wrap: wrap;
+    @include mq("md"){
+        display: block;
+    }
+}
+
+.form__label{
+    width: 27.7%;
+    padding: 12px 0 11px;
+    @include mq("md"){
+        width: 100%;
+        padding: 0 0 4px;
+    }
+}
+
+.form__label-textarea{
+    width: 27.7%;
+    padding: 12px 0 0;
+    @include mq("md"){
+        width: 100%;
+        padding: 0 0 4px;
+    }
+}
+
+.form__input{
+    width: 72.3%;
+    @include mq("md"){
+        width: 100%;
+    }
+}
+
+.radio__label{
+    width: 100%;
+}
+
+.radio__input-text:not(:first-child){
+    margin-left: 35px;
+}
+
+.form__label-text{
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: calc(17/14);
+}
+
+.form__label-text,
+.form__input-text,
+.form__input-text::placeholder,
+.radio__input-text,
+.form__textarea::placeholder{
+    font-family: $second-font;
+}
+
+.form__input-text,
+.form__textarea{
+    width: 100%;
+    padding: 8px 12px 8px;
+    background-color: $beige-news;
+}
+
+.form__label-text::after{
+    content: "*";
+    color: $red;
+    vertical-align: top;
+}
+
+.form__input-text::placeholder,
+.form__textarea::placeholder,
+.radio__input-text{
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: calc(17/14);
+}
+
+.form__input-text::placeholder,
+.form__textarea::placeholder{
+    color: $gray-title-line;
+}
+
+.radio__input{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+    @include mq("md"){
+        margin-left: 0;
+        margin-top: 8px;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+}
+
+.radio__input-text{
+    @include mq("md"){
+        margin-left: 12px;
+    }
+}
+
+.radio__input-button{
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border: 1px solid $beige-news;
+    border-radius: 50%;
+}
+
+.radio__input-button:checked:before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $beige-news;
+    content: "";
+    display: block;
+}
+
+.form__textarea{
+    height: 171px;
+    resize: none;
+}
+
+.contact-form__button{
+    margin-top: 33px;
+    @include mq("md"){
+        margin-top: 13px;
+    }
+}
+
+.form__button{
+    width: 183px;
+    text-align: center;
+    padding: 17.5px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    line-height: 1.188;
+    border-radius: 6px;
+    @include mq("md"){
+        width: 169px;
+        font-size: 14px;
+        padding: 14px;
+        line-height: 1.214;
+    }
+}
+
+// 共通パーツ
+.text{
+    color: $white;
+}
+
+.inner{
+    width: 100%;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    @include mq("md"){
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.inner-mini{
+    width: 100%;
+    max-width: 850px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md"){
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.section-title,
+.section-title-reverse{
+    padding-left: 33px;
+    font-size: 38px;
+    color: $white;
+    letter-spacing: 0.05em;
+    line-height: 1.211;
+    position: relative;
+    display: flex;
+    @include mq("md"){
+        padding-left: 30px;
+        font-size: 32px;
+        line-height: 1.219;
+    }
+}
+
+.section-title-reverse{
+    color: $black;
+}
+
+.section-title::before,
+.section-title-reverse::before{
+    content: "";
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 23px;
+    height: 23px;
+    display: block;
+    @include mq("md"){
+        width: 20px;
+        height: 20px;
+        top: 9px;
+    }
+}
+.section-title::before{
+    background-image: url(../images/section-icon-img.svg);
+}
+.section-title-reverse::before{
+    background-image: url(../images/section-icon-reverse-img.svg);
+}
+
+// セクションタイトル横線長さ指定したい
+.section-title::after,
+.section-title-reverse::after{
+    content: "";
+    margin-top: auto;
+    margin-bottom: auto;
+    border-top: 1px solid $gray-title-line;
+    margin-left: 30px;
+    height: 1px;
+    flex-grow: 1;
+}
+
+.button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-inline:  auto;
+    border: 0.5px solid $white;
+    color: $white;
+}
+
+.button:hover{
+    box-shadow: 3px 3px 1px 1px $white2;
+    transition: box-shadow 0.3s ;
+}
+
+.button::after{
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: 20px;
+    height: 8px;
+    width: 8px;
+    display: block;
+    border-top: 1px solid $white;
+    border-right: 1px solid $white;
+    transform: rotate(45deg);
+    @include mq("md"){
+        top: 19px;
+    }
+}
+
+.section-line-none.section-title::after{
+    display: none;
+}
+.md-show{
+    display: none;
+    @include mq("md"){
+        display: block;
+    }
+}
+
+.md-none{
+    @include mq("md"){
+        display: none;
+    }
+}

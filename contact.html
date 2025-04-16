@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="robots" content="noindex,nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <!-- meta情報 -->
+  <title>ExciteCode 4</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="noindex">
+  <!-- ogp -->
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta name="twitter:card" content="summary">
+  <!-- ファビコン -->
+  <link rel="icon" href="#">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+
+  <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+  <header class="header js-header">
+    <div class="header__inner">
+      <h1 class="header__name"><a href="./index.html"><img class="header__logo" src="./images/icon-img.svg" alt="へっだーろご"></a></h1>
+      <nav class="header__nav md-none">
+        <ul class="header__items">
+          <li class="header__item"><a href="./index.html#about" class="nav__item header__link">About</a></li>
+          <li class="header__item"><a href="./index.html#service" class="nav__item header__link">Service</a></li>
+          <li class="header__item"><a href="./index.html#news" class="nav__item header__link">News</a></li>
+        </ul>
+      </nav>
+      <a href="./contact.html" class="header__link header__link--contact md-none">Contact</a>
+    </div>
+
+    <!-- hamburger menu -->
+    <div class="hamburger js-hamburger md-show">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- drawer menu -->
+    <div class="drawer-menu js-drawer">
+      <div class="drawer-menu__inner">
+        <ul class="drawer-menu__items">
+          <li class="drawer-menu__item"><a href="./about.html" class="drawer-menu__link drawer-menu__icon">About</a></li>
+          <li class="drawer-menu__item"><a href="./index.html#service" class="drawer-menu__link drawer-menu__icon">Service</a></li>
+          <li class="drawer-menu__item"><a href="./index.html#news" class="drawer-menu__link drawer-menu__icon">News</a></li>
+          <li class="drawer-menu__item "><a href="./contact.html" class="drawer-menu__link drawer-menu__link--contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- コンタクトファーストビュー -->
+    <div class="about-fv">
+      <div class="about-fv__inner">
+        <div class="about-fv__slide">
+          <picture>
+            <source srcset="./images/FV-contact-img.jpg" media="(min-width:768px)">
+            <img src="./images/FV-contact-sp-img.jpg" alt="">
+          </picture>
+        </div>
+        <p class="about-fv__title text">Contact</p>
+      </div>
+    </div>
+    <!-- コンタクトフォームセクション -->
+    <div class="contact-form">
+      <div class="contact-form__inner inner-mini">
+        <div class="contact-form__textbox">
+          <p class="contact-form__heading text">当店へのお問い合わせは下記フォームより受け付けております。<br class="md-none">担当者が確認後、折り返しご連絡させていただきます。</p>
+        </div>
+        <form action="" class="contact-form-box form">
+          <ul class="form__list text">
+            <li class="form__item form__item-name">
+              <dl>
+                <dt class="form__label">
+                  <p class="form__label-text">お名前</p>
+                </dt>
+                <dd class="form__input">
+                  <input type="text" class="form__input-text" name="お名前" placeholder="仕立　一郎">
+                </dd>
+              </dl>
+            </li>
+            <li class="form__item form__item-mail">
+              <dl>
+                <dt class="form__label">
+                  <p class="form__label-text">メールアドレス</p>
+                </dt>
+                <dd class="form__input">
+                  <input type="text" class="form__input-text" name="お名前メールアドレス" placeholder="excitecode@suit.co.jp">
+                </dd>
+              </dl>
+            </li>
+            <li class="form__item radio form__item-radio">
+              <dl>
+                <dt class="radio__label">
+                  <p class="form__label-text">お問い合わせの種類</p>
+                </dt>
+                <dd class="radio__input">
+                  <label for="select" class="radio__input-text">
+                    <input type="radio" class="radio__input-button" name="問い合わせ種類" value="order-made">オーダーメイドスーツ</label>
+                  <label for="select" class="radio__input-text">
+                    <input type="radio" class="radio__input-button" name="問い合わせ種類" value="other-item">スーツ以外のアイテム</label>
+                  <label for="select" class="radio__input-text">
+                    <input type="radio" class="radio__input-button" name="問い合わせ種類" value="others">その他</label>
+                </dd>
+              </dl>
+            </li>
+            <li class="form__item form__item-textarea">
+              <dl>
+                <dt class="form__label form__label-textarea">
+                  <p class="form__label-text">お問い合わせ内容</p>
+                </dt>
+                <dd class="form__input">
+                  <textarea class="form__textarea" name="お問い合わせ内容" placeholder="入力してください"></textarea>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+          <div class="contact-form__button">
+            <input type="submit" class="form__button button" value="送信">
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small class="footer__copyright">&copy;ExciteCode&nbsp;all&nbsp;rights&nbsp;reserved</small>
+  </footer>
+
+</body>
+
+</html>
