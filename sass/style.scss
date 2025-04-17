@@ -42,7 +42,7 @@
 }
 .header__nav{
     height: inherit;
-    margin-left: calc(100% * 425/1400);
+    margin-left: calc(100vw * 425/1440);
     margin-right: auto;
 }
 
@@ -276,7 +276,7 @@
 .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
     bottom: calc(100% * 30/814);
     @include mq("md"){
-        bottom: 30px;
+        bottom: calc(100% * 20/665);
     }
 }
 
@@ -365,7 +365,7 @@
 .about__box{
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 52px;
+    column-gap: 37px;
     justify-content: center;
     @include mq("md"){
         grid-template-columns: auto;
@@ -536,6 +536,10 @@
     row-gap: 40px;
     @include mq("md"){
         margin-inline: auto;
+        @include mq("sp"){
+            grid-template-columns: 250px;
+            justify-content: center;
+        }
     }
 }
 
@@ -579,6 +583,7 @@
     line-height: calc(19/16);
     @include mq("md"){
         font-size: 14px;
+        line-height: calc(20/14);
     }
 }
 
@@ -610,8 +615,9 @@
     margin-left: auto;
     margin-right: auto;
     @include mq("md"){
-        padding-left: 15px;
-        padding-right: 15px;
+        margin-top: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -625,7 +631,7 @@
 .news__item:not(:first-child){
     margin-top: 27px;
     @include mq("md"){
-        margin-top: 22px;
+        margin-top: 21px;
     }
 }
 
@@ -639,6 +645,7 @@
 
 .news__item-link{
     display: flex;
+    align-items: center;
     @include mq("md"){
         display: block;
     }
@@ -659,8 +666,11 @@
     font-size: 14px;
     letter-spacing: 0;
     color: $black;
+    font-family: "Noto Sans JP",sans-serif;
     @include mq("md"){
-        font-size: 14px;
+        margin-top: 4px;
+        font-size: 13px;
+        line-height: calc(19/13);
     }
 }
 
@@ -676,7 +686,10 @@
     background-color: $gray-tag;
     color: $white2;
     @include mq("md"){
+        width: 80px;
         padding: 4.5px 20px;
+        margin-left: 30px;
+        line-height: calc(14/10);
     }
 }
 
@@ -685,10 +698,18 @@
     font-size: 15px;
     color: $black;
     letter-spacing: 0;
+    line-height: calc(18/15);
     @include mq("md"){
         margin-left: 0;
         margin-top: 22px;
         font-size: 14px;
+        line-height: calc(20/14);
+    }
+}
+
+.news__item:last-child .news__item-title{
+    @include mq("md"){
+        line-height: calc(26/14);
     }
 }
 
@@ -707,7 +728,7 @@
         background-size: cover;
         background-position: center;
         @include mq("md"){
-            padding: 58px 0 80px;
+            padding: 60px 0 80px;
         }
     }
 }
@@ -733,6 +754,11 @@
     margin-top: 60px;
     padding-left: calc(100% * 132/600);
     padding-right: calc(100% * 202/600);
+    @include mq("md"){
+        margin-top: 50px;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .contact__text{
@@ -743,6 +769,7 @@
     @include mq("md"){
         margin-top: 50px;
         font-size: 13px;
+        line-height: calc(19/13);
     }
 }
 
@@ -755,10 +782,11 @@
     border-radius: 6px;
     line-height: calc(19/16);
     @include mq("md"){
-        margin-top: 18px;
-        padding: 14px 30px;
+        margin-top: 17px;
+        padding: 13px 30px;
         width: 227px;
         font-size: 14px;
+        line-height: calc(20/14);
     }
 }
 
@@ -796,6 +824,7 @@
 // ファーストビュー
 .about-fv{
     width: 100%;
+    height: calc(100vh * 445/665);
 }
 
 .about-fv__inner{
@@ -808,9 +837,6 @@
 .about-fv__slide picture,
 .about-fv__slide img{
     height: inherit;
-}
-
-.about-fv__slide{
     object-fit: cover;
 }
 
@@ -834,7 +860,7 @@
     width: 100%;
     background-color: $black-about;
     @include mq("md"){
-        padding: 60px 0;
+        padding: 60px 0 63px;
     }
 }
 
@@ -913,12 +939,15 @@
     box-shadow: 0px 4px 4px rgba($color: $black, $alpha: 0.25);
     @include mq("md"){
         max-width: 250px;
+        margin-inline: auto;
     }
 }
 
 .message__body{
     margin-top: 86px;
-    // align-self: end;
+    @include mq("md"){
+        margin-top: 0;
+    }
 }
 
 .message__text{
@@ -928,6 +957,7 @@
     letter-spacing: 0.05em;
     @include mq("md"){
         margin-top: 18px;
+        line-height: calc(26/14);
     }
 }
 
@@ -941,6 +971,8 @@
     @include mq("md"){
         margin-top: 8px;
         text-align: left;
+        font-size: 13px;
+        line-height: calc(16/13);
     }
 }
 // message__container内の要素をそれぞれ上揃え下揃えにしたい
@@ -960,6 +992,7 @@
     padding-left: 33px;
     padding-right: 33px;
     @include mq("md"){
+        margin-top: 40px;
         padding-left: 30px;
         padding-right: 30px;
     }
@@ -980,6 +1013,7 @@
     margin-top: 16px;
     @include mq("md"){
         margin-top: 22px;
+        padding-bottom: 21px;
     }
 }
 
@@ -991,7 +1025,10 @@
     font-weight: $light;
     font-family: $second-font;
     letter-spacing: 0;
-    line-height: 1.214;
+    line-height: calc(17/14);
+    @include mq("md"){
+        line-height: calc(20/14);
+    }
 }
 
 .company__textbox{
@@ -1009,18 +1046,17 @@
     width: 132px;
 }
 
+.company__item:first-child .company__text{
+    @include mq("md"){
+        line-height: calc(17/14);
+    }
+}
+
 .company__text{
     @include mq("md"){
         margin-top: 12px;
     }
 }
-
-// .company__text-2{
-//     margin-left: 10px;
-//     @include mq("md"){
-//         margin-left: 0;
-//     }
-// }
 
 .company__map-icon{
     cursor: pointer;
@@ -1033,13 +1069,16 @@
 
 .company__map-underline::after{
     position: absolute;
-    top: 4px;
+    top: 2px;
     right: -14px;
     content: "";
     display: block;
-    background-image: url(/images/map-icon.svg);
+    background-image: url(../images/map-icon.svg);
     width: 10px;
     height: 14px;
+    @include mq("md"){
+        top: 1px;
+    }
 }
 
 // モーダルマップ
@@ -1084,6 +1123,8 @@
 .modal__text{
     font-size: 15px;
     letter-spacing: 0.05em;
+    line-height: calc(18/15);
+    font-family: "Noto Sans JP",sans-serif;
 }
 
 .modal__close-button{
@@ -1091,8 +1132,8 @@
     margin-left: auto;
     position: relative;
     display: block;
-    width: 13px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
 }
 
 .modal__close-button::before,
@@ -1137,30 +1178,43 @@
     padding: 80px 0;
     background-color: $black-about;
     @include mq("md"){
-        padding: 60px 0;
+        padding: 60px 0 22px;
     }
 }
-
-.contact-form__textbox{
-    max-width: 500px;
+.contact-form__inner{
+    width: 100%;
+    max-width: 454px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    @include mq("md"){
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .contact-form__heading{
     font-family: $second-font;
-    text-align: left;
-    display: inline-block;
     font-size: 15px;
     font-weight: $light;
-    letter-spacing: 0.05em;
-    line-height: 1.867;
+    letter-spacing: 0.049em;
+    line-height: calc(28/15);
 }
 
 // コンタクトフォーム
+.form__inner{
+    width: 100%;
+    max-width: 834px;
+    padding-right: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md"){
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
 .contact-form-box{
-    margin-top: 22px;
+    margin-top: 20px;
     width: 100%;
     padding: 60px 25px;
     background-color: $black-about;
@@ -1171,12 +1225,15 @@
     }
 }
 
-.form__list,
-.contact-form__button{
-    max-width: 498px;
+.form__list{
+    max-width: 536px;
     width: 100%;
+    padding-left: 38px;
     margin-left: auto;
     margin-right: auto;
+    @include mq("md"){
+        padding-left: 0;
+    }
 }
 
 .form__item{
@@ -1191,14 +1248,14 @@
 }
 
 .form__item-radio{
-    margin-top: 35px;
+    margin-top: 30px;
     @include mq("md"){
         margin-top: 20px;
     }
 }
 
 .form__item-textarea{
-    margin-top: 35px;
+    margin-top: 34px;
     @include mq("md"){
         margin-top: 20px;
     }
@@ -1241,14 +1298,18 @@
     width: 100%;
 }
 
-.radio__input-text:not(:first-child){
-    margin-left: 35px;
-}
-
 .form__label-text{
     font-size: 14px;
     letter-spacing: 0;
+    line-height: calc(20/14);
+}
+
+.form__item:first-child .form__label-text,
+.form__item:last-child .form__label-text{
     line-height: calc(17/14);
+    @include mq("md"){
+        line-height: calc(20/14);
+    }
 }
 
 .form__label-text,
@@ -1262,8 +1323,11 @@
 .form__input-text,
 .form__textarea{
     width: 100%;
-    padding: 8px 12px 8px;
+    padding: 8px 12px 9px;
     background-color: $beige-news;
+    @include mq("md"){
+        padding: 7px 12px 9px;
+    }
 }
 
 .form__label-text::after{
@@ -1278,6 +1342,9 @@
     font-size: 14px;
     letter-spacing: 0;
     line-height: calc(17/14);
+    @include mq("md"){
+        line-height: calc(20/14);
+    }
 }
 
 .form__input-text::placeholder,
@@ -1289,6 +1356,7 @@
     display: flex;
     margin-top: 20px;
     margin-left: 20px;
+    column-gap: 40px;
     @include mq("md"){
         margin-left: 0;
         margin-top: 8px;
@@ -1298,6 +1366,7 @@
 }
 
 .radio__input-text{
+
     @include mq("md"){
         margin-left: 12px;
     }
@@ -1305,6 +1374,8 @@
 
 .radio__input-button{
     position: relative;
+    margin: 0;
+    margin-right: 4px;
     width: 10px;
     height: 10px;
     border: 1px solid $beige-news;
@@ -1332,17 +1403,17 @@
 .contact-form__button{
     margin-top: 33px;
     @include mq("md"){
-        margin-top: 13px;
+        margin-top: 15px;
     }
 }
 
 .form__button{
     width: 183px;
     text-align: center;
-    padding: 17.5px;
+    padding: 16px;
     font-size: 16px;
     letter-spacing: 0.05em;
-    line-height: 1.188;
+    line-height: calc(23/16);
     border-radius: 6px;
     @include mq("md"){
         width: 169px;
@@ -1420,9 +1491,11 @@
         top: 9px;
     }
 }
+
 .section-title::before{
     background-image: url(../images/section-icon-img.svg);
 }
+
 .section-title-reverse::before{
     background-image: url(../images/section-icon-reverse-img.svg);
 }
@@ -1437,6 +1510,9 @@
     margin-left: 30px;
     height: 1px;
     flex-grow: 1;
+    @include mq("md"){
+        margin-left: 14px;
+    }
 }
 
 .button{
@@ -1472,6 +1548,7 @@
 .section-line-none.section-title::after{
     display: none;
 }
+
 .md-show{
     display: none;
     @include mq("md"){
