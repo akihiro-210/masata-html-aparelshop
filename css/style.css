@@ -1326,7 +1326,7 @@ select::-ms-expand {
   right: -14px;
   content: "";
   display: block;
-  background-image: url(/images/map-icon.svg);
+  background-image: url(../images/map-icon.svg);
   width: 10px;
   height: 14px;
 }

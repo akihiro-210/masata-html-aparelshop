@@ -1058,13 +1058,6 @@
     }
 }
 
-// .company__text-2{
-//     margin-left: 10px;
-//     @include mq("md"){
-//         margin-left: 0;
-//     }
-// }
-
 .company__map-icon{
     cursor: pointer;
 }
@@ -1080,7 +1073,7 @@
     right: -14px;
     content: "";
     display: block;
-    background-image: url(/images/map-icon.svg);
+    background-image: url(../images/map-icon.svg);
     width: 10px;
     height: 14px;
     @include mq("md"){
@@ -1196,7 +1189,6 @@
     @include mq("md"){
         padding-left: 15px;
         padding-right: 15px;
-        // max-width: 100%;
     }
 }
 
@@ -1499,9 +1491,11 @@
         top: 9px;
     }
 }
+
 .section-title::before{
     background-image: url(../images/section-icon-img.svg);
 }
+
 .section-title-reverse::before{
     background-image: url(../images/section-icon-reverse-img.svg);
 }
@@ -1554,6 +1548,7 @@
 .section-line-none.section-title::after{
     display: none;
 }
+
 .md-show{
     display: none;
     @include mq("md"){
