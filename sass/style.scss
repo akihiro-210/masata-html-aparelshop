@@ -42,7 +42,7 @@
 }
 .header__nav{
     height: inherit;
-    margin-left: calc(100% * 425/1400);
+    margin-left: calc(100vw * 425/1440);
     margin-right: auto;
 }
 
@@ -365,7 +365,7 @@
 .about__box{
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 52px;
+    column-gap: 37px;
     justify-content: center;
     @include mq("md"){
         grid-template-columns: auto;
@@ -536,6 +536,10 @@
     row-gap: 40px;
     @include mq("md"){
         margin-inline: auto;
+        @include mq("sp"){
+            grid-template-columns: 250px;
+            justify-content: center;
+        }
     }
 }
 
@@ -579,6 +583,7 @@
     line-height: calc(19/16);
     @include mq("md"){
         font-size: 14px;
+        line-height: calc(20/14);
     }
 }
 
@@ -610,8 +615,9 @@
     margin-left: auto;
     margin-right: auto;
     @include mq("md"){
-        padding-left: 15px;
-        padding-right: 15px;
+        margin-top: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
@@ -625,7 +631,7 @@
 .news__item:not(:first-child){
     margin-top: 27px;
     @include mq("md"){
-        margin-top: 22px;
+        margin-top: 21px;
     }
 }
 
@@ -639,6 +645,7 @@
 
 .news__item-link{
     display: flex;
+    align-items: center;
     @include mq("md"){
         display: block;
     }
@@ -659,8 +666,11 @@
     font-size: 14px;
     letter-spacing: 0;
     color: $black;
+    font-family: "Noto Sans JP",sans-serif;
     @include mq("md"){
-        font-size: 14px;
+        margin-top: 4px;
+        font-size: 13px;
+        line-height: calc(19/13);
     }
 }
 
@@ -676,7 +686,10 @@
     background-color: $gray-tag;
     color: $white2;
     @include mq("md"){
+        width: 80px;
         padding: 4.5px 20px;
+        margin-left: 30px;
+        line-height: calc(14/10);
     }
 }
 
@@ -685,10 +698,18 @@
     font-size: 15px;
     color: $black;
     letter-spacing: 0;
+    line-height: calc(18/15);
     @include mq("md"){
         margin-left: 0;
         margin-top: 22px;
         font-size: 14px;
+        line-height: calc(20/14);
+    }
+}
+
+.news__item:last-child .news__item-title{
+    @include mq("md"){
+        line-height: calc(26/14);
     }
 }
 
@@ -707,7 +728,7 @@
         background-size: cover;
         background-position: center;
         @include mq("md"){
-            padding: 58px 0 80px;
+            padding: 60px 0 80px;
         }
     }
 }
@@ -733,6 +754,11 @@
     margin-top: 60px;
     padding-left: calc(100% * 132/600);
     padding-right: calc(100% * 202/600);
+    @include mq("md"){
+        margin-top: 50px;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .contact__text{
@@ -743,6 +769,7 @@
     @include mq("md"){
         margin-top: 50px;
         font-size: 13px;
+        line-height: calc(19/13);
     }
 }
 
@@ -755,10 +782,11 @@
     border-radius: 6px;
     line-height: calc(19/16);
     @include mq("md"){
-        margin-top: 18px;
-        padding: 14px 30px;
+        margin-top: 17px;
+        padding: 13px 30px;
         width: 227px;
         font-size: 14px;
+        line-height: calc(20/14);
     }
 }
 
@@ -796,6 +824,7 @@
 // ファーストビュー
 .about-fv{
     width: 100%;
+    height: calc(100vh * 445/665);
 }
 
 .about-fv__inner{
@@ -808,9 +837,6 @@
 .about-fv__slide picture,
 .about-fv__slide img{
     height: inherit;
-}
-
-.about-fv__slide{
     object-fit: cover;
 }
 
@@ -834,7 +860,7 @@
     width: 100%;
     background-color: $black-about;
     @include mq("md"){
-        padding: 60px 0;
+        padding: 60px 0 63px;
     }
 }
 
@@ -913,12 +939,15 @@
     box-shadow: 0px 4px 4px rgba($color: $black, $alpha: 0.25);
     @include mq("md"){
         max-width: 250px;
+        margin-inline: auto;
     }
 }
 
 .message__body{
     margin-top: 86px;
-    // align-self: end;
+    @include mq("md"){
+        margin-top: 0;
+    }
 }
 
 .message__text{
@@ -928,6 +957,7 @@
     letter-spacing: 0.05em;
     @include mq("md"){
         margin-top: 18px;
+        line-height: calc(26/14);
     }
 }
 
@@ -941,6 +971,8 @@
     @include mq("md"){
         margin-top: 8px;
         text-align: left;
+        font-size: 13px;
+        line-height: calc(16/13);
     }
 }
 // message__container内の要素をそれぞれ上揃え下揃えにしたい
@@ -960,6 +992,7 @@
     padding-left: 33px;
     padding-right: 33px;
     @include mq("md"){
+        margin-top: 40px;
         padding-left: 30px;
         padding-right: 30px;
     }
@@ -980,6 +1013,7 @@
     margin-top: 16px;
     @include mq("md"){
         margin-top: 22px;
+        padding-bottom: 21px;
     }
 }
 
@@ -991,7 +1025,10 @@
     font-weight: $light;
     font-family: $second-font;
     letter-spacing: 0;
-    line-height: 1.214;
+    line-height: calc(17/14);
+    @include mq("md"){
+        line-height: calc(20/14);
+    }
 }
 
 .company__textbox{
@@ -1007,6 +1044,12 @@
 
 .company__name{
     width: 132px;
+}
+
+.company__item:first-child .company__text{
+    @include mq("md"){
+        line-height: calc(17/14);
+    }
 }
 
 .company__text{
@@ -1033,13 +1076,16 @@
 
 .company__map-underline::after{
     position: absolute;
-    top: 4px;
+    top: 2px;
     right: -14px;
     content: "";
     display: block;
     background-image: url(/images/map-icon.svg);
     width: 10px;
     height: 14px;
+    @include mq("md"){
+        top: 1px;
+    }
 }
 
 // モーダルマップ
@@ -1084,6 +1130,8 @@
 .modal__text{
     font-size: 15px;
     letter-spacing: 0.05em;
+    line-height: calc(18/15);
+    font-family: "Noto Sans JP",sans-serif;
 }
 
 .modal__close-button{
@@ -1091,8 +1139,8 @@
     margin-left: auto;
     position: relative;
     display: block;
-    width: 13px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
 }
 
 .modal__close-button::before,
@@ -1137,7 +1185,22 @@
     padding: 80px 0;
     background-color: $black-about;
     @include mq("md"){
-        padding: 60px 0;
+        padding: 60px 0 22px;
+    }
+}
+.contact-form__inner{
+    width: 100vw;
+    max-width: calc(100vw * 850/1440);
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: calc(100vw * 278/1440);
+    margin-right: calc(100vw * 312/1440);
+    @include mq("md"){
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
     }
 }
 
@@ -1145,6 +1208,9 @@
     max-width: 500px;
     margin-left: calc(100vw * 190/1440);
     margin-right: auto;
+    @include mq("md"){
+        margin-left: auto;
+    }
 }
 
 .contact-form__heading{
@@ -1165,8 +1231,9 @@
     background-color: $black-about;
     box-shadow: 3px 3px 6px rgba($color: $shadow, $alpha: 0.75);
     @include mq("md"){
+        width: 100%;
         margin-top: 20px;
-        padding: 40px 16px;
+        padding: 40px 16px 41px;
     }
 }
 
@@ -1176,6 +1243,10 @@
     width: calc(100vw * 498/1440);
     margin-left: calc(100vw * 145/1440);
     margin-right: auto;
+    @include mq("md"){
+        width: 100%;
+        margin-left: auto;
+    }
 }
 
 .form__item{
@@ -1185,21 +1256,21 @@
 .form__item-mail{
     margin-top: 22px;
     @include mq("md"){
-        margin-top: 20px;
+        margin-top: 23px;
     }
 }
 
 .form__item-radio{
     margin-top: 35px;
     @include mq("md"){
-        margin-top: 20px;
+        margin-top: 23px;
     }
 }
 
 .form__item-textarea{
     margin-top: 35px;
     @include mq("md"){
-        margin-top: 20px;
+        margin-top: 21px;
     }
 }
 
@@ -1217,6 +1288,7 @@
     @include mq("md"){
         width: 100%;
         padding: 0 0 4px;
+        margin-top: 3px;
     }
 }
 
@@ -1230,7 +1302,7 @@
 }
 
 .form__input{
-    width: 72.3%;
+    width:calc(100vw * 360/1440);
     @include mq("md"){
         width: 100%;
     }
@@ -1240,9 +1312,9 @@
     width: 100%;
 }
 
-.radio__input-text:not(:first-child){
-    margin-left: 35px;
-}
+// .radio__input-text:not(:first-child){
+//     margin-left: 35px;
+// }
 
 .form__label-text{
     font-size: 14px;
@@ -1277,6 +1349,9 @@
     font-size: 14px;
     letter-spacing: 0;
     line-height: calc(17/14);
+    @include mq("md"){
+        line-height: calc(20/14);
+    }
 }
 
 .form__input-text::placeholder,
@@ -1287,10 +1362,14 @@
 .radio__input{
     display: flex;
     margin-top: 20px;
-    margin-left: 18px;
+    padding-left: 20px;
+    padding-right: 35px;
+    flex-wrap: wrap;
+    column-gap: 40px;
     @include mq("md"){
         margin-left: 0;
-        margin-top: 8px;
+        margin-top: 10px;
+        padding-left: 0;
         flex-direction: column;
         row-gap: 16px;
     }
@@ -1308,6 +1387,8 @@
     height: 10px;
     border: 1px solid $beige-news;
     border-radius: 50%;
+    margin: 0;
+    margin-right: 4px;
 }
 
 .radio__input-button:checked:before{
@@ -1332,7 +1413,10 @@
     margin-top: 33px;
     margin-left: calc(100vw * 283/1440);
     @include mq("md"){
-        margin-top: 13px;
+        margin-top: 14px;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -1375,12 +1459,12 @@
 }
 
 .inner-mini{
-    width: 100vw;
-    max-width: calc(100vw * 850/1440);
+    width: 100%;
+    max-width: 850px;
     padding-left: 25px;
     padding-right: 25px;
-    margin-left: calc(100vw * 278/1440);
-    margin-right: calc(100vw * 312/1440);
+    margin-left: auto;
+    margin-right: auto;
     @include mq("md"){
         padding-left: 15px;
         padding-right: 15px;
