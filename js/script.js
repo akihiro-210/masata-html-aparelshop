@@ -1,7 +1,7 @@
 
 // ヘッダーメニュースクロール時の色変更
   $(window).on("scroll", function () {
-    const sliderHeight = $(".mv,.contact-mv").height();
+    const sliderHeight = $(".fv,.contact-fv").height();
     if (sliderHeight - 30 < $(this).scrollTop()) {
       $(".js-header").addClass("headerColorScroll");
     } else {
