@@ -1442,70 +1442,64 @@ select::-ms-expand {
 }
 
 .contact-form__inner {
-  width: 100vw;
-  max-width: 59.0277777778vw;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin-left: 19.3055555556vw;
-  margin-right: 21.6666666667vw;
+  width: 100%;
+  max-width: 454px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media screen and (max-width: 768px) {
   .contact-form__inner {
     padding-left: 15px;
     padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-  }
-}
-
-.contact-form__textbox {
-  max-width: 500px;
-  margin-left: 13.1944444444vw;
-  margin-right: auto;
-}
-@media screen and (max-width: 768px) {
-  .contact-form__textbox {
-    margin-left: auto;
   }
 }
 
 .contact-form__heading {
   font-family: "roboto", "Noto Sans JP", sans-serif;
-  text-align: left;
-  display: inline-block;
   font-size: 15px;
   font-weight: 300;
-  letter-spacing: 0.05em;
-  line-height: 1.867;
+  letter-spacing: 0.049em;
+  line-height: 1.8666666667;
+}
+
+.form__inner {
+  width: 100%;
+  max-width: 834px;
+  padding-right: 34px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 768px) {
+  .form__inner {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 
 .contact-form-box {
-  margin-top: 22px;
-  width: 55.5555555556vw;
+  margin-top: 20px;
+  width: 100%;
   padding: 60px 25px;
   background-color: #272625;
   box-shadow: 3px 3px 6px rgba(29, 29, 29, 0.75);
 }
 @media screen and (max-width: 768px) {
   .contact-form-box {
-    width: 100%;
     margin-top: 20px;
-    padding: 40px 16px 41px;
+    padding: 40px 16px;
   }
 }
 
-.form__list,
-.contact-form__button {
-  width: 34.5833333333vw;
-  margin-left: 10.0694444444vw;
+.form__list {
+  max-width: 536px;
+  width: 100%;
+  padding-left: 38px;
+  margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 768px) {
-  .form__list,
-  .contact-form__button {
-    width: 100%;
-    margin-left: auto;
+  .form__list {
+    padding-left: 0;
   }
 }
 
@@ -1518,25 +1512,25 @@ select::-ms-expand {
 }
 @media screen and (max-width: 768px) {
   .form__item-mail {
-    margin-top: 23px;
+    margin-top: 20px;
   }
 }
 
 .form__item-radio {
-  margin-top: 35px;
+  margin-top: 30px;
 }
 @media screen and (max-width: 768px) {
   .form__item-radio {
-    margin-top: 23px;
+    margin-top: 20px;
   }
 }
 
 .form__item-textarea {
-  margin-top: 35px;
+  margin-top: 34px;
 }
 @media screen and (max-width: 768px) {
   .form__item-textarea {
-    margin-top: 21px;
+    margin-top: 20px;
   }
 }
 
@@ -1558,7 +1552,6 @@ select::-ms-expand {
   .form__label {
     width: 100%;
     padding: 0 0 4px;
-    margin-top: 3px;
   }
 }
 
@@ -1574,7 +1567,7 @@ select::-ms-expand {
 }
 
 .form__input {
-  width: 25vw;
+  width: 72.3%;
 }
 @media screen and (max-width: 768px) {
   .form__input {
@@ -1589,7 +1582,18 @@ select::-ms-expand {
 .form__label-text {
   font-size: 14px;
   letter-spacing: 0;
+  line-height: 1.4285714286;
+}
+
+.form__item:first-child .form__label-text,
+.form__item:last-child .form__label-text {
   line-height: 1.2142857143;
+}
+@media screen and (max-width: 768px) {
+  .form__item:first-child .form__label-text,
+  .form__item:last-child .form__label-text {
+    line-height: 1.4285714286;
+  }
 }
 
 .form__input-text::-moz-placeholder, .form__textarea::-moz-placeholder {
@@ -1607,8 +1611,14 @@ select::-ms-expand {
 .form__input-text,
 .form__textarea {
   width: 100%;
-  padding: 8px 12px 8px;
+  padding: 8px 12px 9px;
   background-color: #BCB5A8;
+}
+@media screen and (max-width: 768px) {
+  .form__input-text,
+  .form__textarea {
+    padding: 7px 12px 9px;
+  }
 }
 
 .form__label-text::after {
@@ -1653,17 +1663,14 @@ select::-ms-expand {
 .radio__input {
   display: flex;
   margin-top: 20px;
-  padding-left: 20px;
-  padding-right: 35px;
-  flex-wrap: wrap;
+  margin-left: 20px;
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
 @media screen and (max-width: 768px) {
   .radio__input {
     margin-left: 0;
-    margin-top: 10px;
-    padding-left: 0;
+    margin-top: 8px;
     flex-direction: column;
     row-gap: 16px;
   }
@@ -1677,12 +1684,12 @@ select::-ms-expand {
 
 .radio__input-button {
   position: relative;
+  margin: 0;
+  margin-right: 4px;
   width: 10px;
   height: 10px;
   border: 1px solid #BCB5A8;
   border-radius: 50%;
-  margin: 0;
-  margin-right: 4px;
 }
 
 .radio__input-button:checked:before {
@@ -1705,28 +1712,20 @@ select::-ms-expand {
 
 .contact-form__button {
   margin-top: 33px;
-  margin-left: 19.6527777778vw;
 }
 @media screen and (max-width: 768px) {
   .contact-form__button {
-    margin-top: 14px;
-    margin-left: 0;
-    display: flex;
-    justify-content: center;
+    margin-top: 15px;
   }
-}
-
-.form__button.button {
-  margin-inline: 0;
 }
 
 .form__button {
   width: 183px;
   text-align: center;
-  padding: 17.5px;
+  padding: 16px;
   font-size: 16px;
   letter-spacing: 0.05em;
-  line-height: 1.188;
+  line-height: 1.4375;
   border-radius: 6px;
 }
 @media screen and (max-width: 768px) {

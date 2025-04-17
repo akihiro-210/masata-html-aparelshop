@@ -1189,63 +1189,58 @@
     }
 }
 .contact-form__inner{
-    width: 100vw;
-    max-width: calc(100vw * 850/1440);
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-left: calc(100vw * 278/1440);
-    margin-right: calc(100vw * 312/1440);
+    width: 100%;
+    max-width: 454px;
+    margin-left: auto;
+    margin-right: auto;
     @include mq("md"){
         padding-left: 15px;
         padding-right: 15px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-    }
-}
-
-.contact-form__textbox{
-    max-width: 500px;
-    margin-left: calc(100vw * 190/1440);
-    margin-right: auto;
-    @include mq("md"){
-        margin-left: auto;
+        // max-width: 100%;
     }
 }
 
 .contact-form__heading{
     font-family: $second-font;
-    text-align: left;
-    display: inline-block;
     font-size: 15px;
     font-weight: $light;
-    letter-spacing: 0.05em;
-    line-height: 1.867;
+    letter-spacing: 0.049em;
+    line-height: calc(28/15);
 }
 
 // コンタクトフォーム
+.form__inner{
+    width: 100%;
+    max-width: 834px;
+    padding-right: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    @include mq("md"){
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
 .contact-form-box{
-    margin-top: 22px;
-    width: calc(100vw * 800/1440);
+    margin-top: 20px;
+    width: 100%;
     padding: 60px 25px;
     background-color: $black-about;
     box-shadow: 3px 3px 6px rgba($color: $shadow, $alpha: 0.75);
     @include mq("md"){
-        width: 100%;
         margin-top: 20px;
-        padding: 40px 16px 41px;
+        padding: 40px 16px;
     }
 }
 
-.form__list,
-.contact-form__button{
-    // max-width: 498px;
-    width: calc(100vw * 498/1440);
-    margin-left: calc(100vw * 145/1440);
+.form__list{
+    max-width: 536px;
+    width: 100%;
+    padding-left: 38px;
+    margin-left: auto;
     margin-right: auto;
     @include mq("md"){
-        width: 100%;
-        margin-left: auto;
+        padding-left: 0;
     }
 }
 
@@ -1256,21 +1251,21 @@
 .form__item-mail{
     margin-top: 22px;
     @include mq("md"){
-        margin-top: 23px;
+        margin-top: 20px;
     }
 }
 
 .form__item-radio{
-    margin-top: 35px;
+    margin-top: 30px;
     @include mq("md"){
-        margin-top: 23px;
+        margin-top: 20px;
     }
 }
 
 .form__item-textarea{
-    margin-top: 35px;
+    margin-top: 34px;
     @include mq("md"){
-        margin-top: 21px;
+        margin-top: 20px;
     }
 }
 
@@ -1288,7 +1283,6 @@
     @include mq("md"){
         width: 100%;
         padding: 0 0 4px;
-        margin-top: 3px;
     }
 }
 
@@ -1302,7 +1296,7 @@
 }
 
 .form__input{
-    width:calc(100vw * 360/1440);
+    width: 72.3%;
     @include mq("md"){
         width: 100%;
     }
@@ -1312,14 +1306,18 @@
     width: 100%;
 }
 
-// .radio__input-text:not(:first-child){
-//     margin-left: 35px;
-// }
-
 .form__label-text{
     font-size: 14px;
     letter-spacing: 0;
+    line-height: calc(20/14);
+}
+
+.form__item:first-child .form__label-text,
+.form__item:last-child .form__label-text{
     line-height: calc(17/14);
+    @include mq("md"){
+        line-height: calc(20/14);
+    }
 }
 
 .form__label-text,
@@ -1333,8 +1331,11 @@
 .form__input-text,
 .form__textarea{
     width: 100%;
-    padding: 8px 12px 8px;
+    padding: 8px 12px 9px;
     background-color: $beige-news;
+    @include mq("md"){
+        padding: 7px 12px 9px;
+    }
 }
 
 .form__label-text::after{
@@ -1362,20 +1363,18 @@
 .radio__input{
     display: flex;
     margin-top: 20px;
-    padding-left: 20px;
-    padding-right: 35px;
-    flex-wrap: wrap;
+    margin-left: 20px;
     column-gap: 40px;
     @include mq("md"){
         margin-left: 0;
-        margin-top: 10px;
-        padding-left: 0;
+        margin-top: 8px;
         flex-direction: column;
         row-gap: 16px;
     }
 }
 
 .radio__input-text{
+
     @include mq("md"){
         margin-left: 12px;
     }
@@ -1383,12 +1382,12 @@
 
 .radio__input-button{
     position: relative;
+    margin: 0;
+    margin-right: 4px;
     width: 10px;
     height: 10px;
     border: 1px solid $beige-news;
     border-radius: 50%;
-    margin: 0;
-    margin-right: 4px;
 }
 
 .radio__input-button:checked:before{
@@ -1411,26 +1410,18 @@
 
 .contact-form__button{
     margin-top: 33px;
-    margin-left: calc(100vw * 283/1440);
     @include mq("md"){
-        margin-top: 14px;
-        margin-left: 0;
-        display: flex;
-        justify-content: center;
+        margin-top: 15px;
     }
-}
-
-.form__button.button{
-    margin-inline: 0;
 }
 
 .form__button{
     width: 183px;
     text-align: center;
-    padding: 17.5px;
+    padding: 16px;
     font-size: 16px;
     letter-spacing: 0.05em;
-    line-height: 1.188;
+    line-height: calc(23/16);
     border-radius: 6px;
     @include mq("md"){
         width: 169px;
