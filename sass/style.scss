@@ -42,8 +42,12 @@
 }
 .header__nav{
     height: inherit;
-    margin-left: calc(100vw * 425/1440);
+    padding-right: 49px;
+    margin-left: auto;
     margin-right: auto;
+    @include mq("lg"){
+        padding-right: 39px;
+    }
 }
 
 .header__items{
@@ -79,7 +83,9 @@
     border: 1px solid $white;
     color: $white;
     line-height: calc(22/18);
+    transition: box-shadow 0.3s;
 }
+
 
 // ハンバーガーメニュー
 
@@ -143,10 +149,6 @@
     background-color: rgba($color: $black, $alpha: 0.9);
 }
 
-.js-drawer{
-    transition: all 1s ease;
-}
-
 .drawer-menu__inner{
     width: 100%;
     height: inherit;
@@ -202,8 +204,8 @@
     padding: 14px;
     border: 1px solid $white;
     border-radius: 6px;
+    transition: box-shadow 0.3s;
 }
-
 
 // インデックス
 // ファーストビュー
@@ -467,7 +469,14 @@
 }
 
 .tab__list{
-    text-align: center;
+    display: flex;
+    column-gap: 55px;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include mq("md"){
+        column-gap: 45px;
+        row-gap: 10px;
+    }
 }
 
 .tab__button{
@@ -481,13 +490,6 @@
         padding-bottom: 4px;
         font-size: 14px;
         line-height: 1.214;
-    }
-}
-
-.tab__button:not(:first-child){
-    margin-left: 55px;
-    @include mq("md"){
-        margin-left: 45px;
     }
 }
 
@@ -646,6 +648,7 @@
 .news__item-link{
     display: flex;
     align-items: center;
+    width: fit-content;
     @include mq("md"){
         display: block;
     }
@@ -931,16 +934,17 @@
     }
 }
 
-
-
 .message__img{
     max-width: 290px;
     align-self: start;
-    box-shadow: 0px 4px 4px rgba($color: $black, $alpha: 0.25);
     @include mq("md"){
         max-width: 250px;
         margin-inline: auto;
     }
+}
+
+.message__img img{
+    box-shadow: 0px 4px 4px 0 rgba($color: $black, $alpha: 0.25);
 }
 
 .message__body{
@@ -975,7 +979,6 @@
         line-height: calc(16/13);
     }
 }
-// message__container内の要素をそれぞれ上揃え下揃えにしたい
 
 // 会社概要セクション
 .company{
@@ -1522,11 +1525,17 @@
     margin-inline:  auto;
     border: 0.5px solid $white;
     color: $white;
+    transition: box-shadow 0.3s;
 }
 
-.button:hover{
-    box-shadow: 3px 3px 1px 1px $white2;
-    transition: box-shadow 0.3s ;
+@media (hover: hover) {
+    .button:hover,
+    .header__link.header__link--contact:hover,
+    .drawer-menu__link--contact:hover {
+        box-shadow: 3px 3px 1px 1px $white2;
+        transition: box-shadow 0.3s ;
+        opacity: 1;
+    }
 }
 
 .button::after{

@@ -184,8 +184,14 @@ select::-ms-expand {
 
 .header__nav {
   height: inherit;
-  margin-left: 29.5138888889vw;
+  padding-right: 49px;
+  margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 1024px) {
+  .header__nav {
+    padding-right: 39px;
+  }
 }
 
 .header__items {
@@ -221,6 +227,7 @@ select::-ms-expand {
   border: 1px solid #F9F2E5;
   color: #F9F2E5;
   line-height: 1.2222222222;
+  transition: box-shadow 0.3s;
 }
 
 .hamburger {
@@ -279,10 +286,6 @@ select::-ms-expand {
   background-color: rgba(34, 34, 34, 0.9);
 }
 
-.js-drawer {
-  transition: all 1s ease;
-}
-
 .drawer-menu__inner {
   width: 100%;
   height: inherit;
@@ -338,6 +341,7 @@ select::-ms-expand {
   padding: 14px;
   border: 1px solid #F9F2E5;
   border-radius: 6px;
+  transition: box-shadow 0.3s;
 }
 
 .fv {
@@ -637,7 +641,18 @@ select::-ms-expand {
 }
 
 .tab__list {
-  text-align: center;
+  display: flex;
+  -moz-column-gap: 55px;
+       column-gap: 55px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .tab__list {
+    -moz-column-gap: 45px;
+         column-gap: 45px;
+    row-gap: 10px;
+  }
 }
 
 .tab__button {
@@ -653,15 +668,6 @@ select::-ms-expand {
     padding-bottom: 4px;
     font-size: 14px;
     line-height: 1.214;
-  }
-}
-
-.tab__button:not(:first-child) {
-  margin-left: 55px;
-}
-@media screen and (max-width: 768px) {
-  .tab__button:not(:first-child) {
-    margin-left: 45px;
   }
 }
 
@@ -843,6 +849,8 @@ select::-ms-expand {
 .news__item-link {
   display: flex;
   align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media screen and (max-width: 768px) {
   .news__item-link {
@@ -1168,13 +1176,16 @@ select::-ms-expand {
 .message__img {
   max-width: 290px;
   align-self: start;
-  box-shadow: 0px 4px 4px rgba(34, 34, 34, 0.25);
 }
 @media screen and (max-width: 768px) {
   .message__img {
     max-width: 250px;
     margin-inline: auto;
   }
+}
+
+.message__img img {
+  box-shadow: 0px 4px 4px 0 rgba(34, 34, 34, 0.25);
 }
 
 .message__body {
@@ -1847,13 +1858,18 @@ select::-ms-expand {
   margin-inline: auto;
   border: 0.5px solid #F9F2E5;
   color: #F9F2E5;
-}
-
-.button:hover {
-  box-shadow: 3px 3px 1px 1px #FFFFFF;
   transition: box-shadow 0.3s;
 }
 
+@media (hover: hover) {
+  .button:hover,
+  .header__link.header__link--contact:hover,
+  .drawer-menu__link--contact:hover {
+    box-shadow: 3px 3px 1px 1px #FFFFFF;
+    transition: box-shadow 0.3s;
+    opacity: 1;
+  }
+}
 .button::after {
   content: "";
   position: absolute;
