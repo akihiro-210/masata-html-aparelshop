@@ -487,7 +487,7 @@
     letter-spacing: 0.05em;
     line-height: calc(19/16);
     @include mq("md"){
-        padding-bottom: 0 0 4px;
+        padding: 0 0 4px;
         font-size: 14px;
         line-height: calc(20/14);
     }
@@ -530,13 +530,14 @@
 }
 
 .service__cards{
-    margin-top: 50px;
+    margin-top: 48px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     column-gap: 20px;
     row-gap: 40px;
     @include mq("md"){
+        margin-top: 49px;
         margin-inline: auto;
         @include mq("sp"){
             grid-template-columns: 250px;

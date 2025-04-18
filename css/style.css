@@ -665,7 +665,7 @@ select::-ms-expand {
 }
 @media screen and (max-width: 768px) {
   .tab__button {
-    padding-bottom: 0 0 4px;
+    padding: 0 0 4px;
     font-size: 14px;
     line-height: 1.4285714286;
   }
@@ -712,7 +712,7 @@ select::-ms-expand {
 }
 
 .service__cards {
-  margin-top: 50px;
+  margin-top: 48px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -722,6 +722,7 @@ select::-ms-expand {
 }
 @media screen and (max-width: 768px) {
   .service__cards {
+    margin-top: 49px;
     margin-inline: auto;
   }
 }
