@@ -172,6 +172,16 @@ select::-ms-expand {
   }
 }
 
+.header__name {
+  height: inherit;
+}
+
+.header__name a {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
 .header__logo {
   width: 171px;
   color: #F9F2E5;

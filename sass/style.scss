@@ -33,6 +33,16 @@
     }
 }
 
+.header__name{
+    height: inherit;
+}
+
+.header__name a{
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+
 .header__logo{
     width: 171px;
     color: $white;
@@ -40,6 +50,7 @@
         width: 132px;
     }
 }
+
 .header__nav{
     height: inherit;
     padding-right: 49px;
