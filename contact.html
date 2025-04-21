@@ -77,7 +77,7 @@
         <div class="about-fv__slide">
           <picture>
             <source srcset="./images/fv-contact-img.jpg" media="(min-width:768px)">
-            <img src="./images/fv-contact-sp-img.jpg" alt="スーツを着用したマネキンの上半身の写真" width="1440px" height="543px">
+            <img src="./images/fv-contact-sp-img.jpg" alt="スーツを着用したマネキンの上半身の写真" width="1440" height="543">
           </picture>
         </div>
         <h2 class="about-fv__title text">Contact</h2>
@@ -96,51 +96,51 @@
               <li class="form__item form__item-name">
                 <dl>
                   <dt class="form__label">
-                    <p class="form__label-text">お名前</p>
+                    <label for="name" class="form__label-text">お名前</label>
                   </dt>
                   <dd class="form__input">
-                    <input type="text" class="form__input-text" name="お名前" placeholder="仕立　一郎">
+                    <input id="name" type="text" class="form__input-text" name="name" placeholder="仕立　一郎" required>
                   </dd>
                 </dl>
               </li>
               <li class="form__item form__item-mail">
                 <dl>
                   <dt class="form__label">
-                    <p class="form__label-text">メールアドレス</p>
+                    <label for="email" class="form__label-text">メールアドレス</label>
                   </dt>
                   <dd class="form__input">
-                    <input type="email" class="form__input-text" name="メールアドレス" placeholder="excitecode@suit.co.jp">
+                    <input id="email" type="email" class="form__input-text" name="email" placeholder="excitecode@suit.co.jp" required>
                   </dd>
                 </dl>
               </li>
               <li class="form__item radio form__item-radio">
                 <dl>
                   <dt class="radio__label">
-                    <p class="form__label-text">お問い合わせの種類</p>
+                    <span class="form__label-text">お問い合わせの種類</span>
                   </dt>
                   <dd class="radio__input">
-                    <label for="select1" class="radio__input-text">
-                      <input type="radio" id="select1" class="radio__input-button" name="問い合わせ種類" value="order-made">オーダーメイドスーツ</label>
-                    <label for="select2" class="radio__input-text">
-                      <input type="radio" id="select2" class="radio__input-button" name="問い合わせ種類" value="other-item">スーツ以外のアイテム</label>
-                    <label for="select3" class="radio__input-text">
-                      <input type="radio" id="select3" class="radio__input-button" name="問い合わせ種類" value="others">その他</label>
+                    <label class="radio__input-text">
+                      <input type="radio" id="select1" class="radio__input-button" name="radio" value="order-made" required>オーダーメイドスーツ</label>
+                    <label class="radio__input-text">
+                      <input type="radio" id="select2" class="radio__input-button" name="radio" value="other-item">スーツ以外のアイテム</label>
+                    <label class="radio__input-text">
+                      <input type="radio" id="select3" class="radio__input-button" name="radio" value="others">その他</label>
                   </dd>
                 </dl>
               </li>
               <li class="form__item form__item-textarea">
                 <dl>
                   <dt class="form__label form__label-textarea">
-                    <p class="form__label-text">お問い合わせ内容</p>
+                    <label for="textarea" class="form__label-text">お問い合わせ内容</label>
                   </dt>
                   <dd class="form__input">
-                    <textarea class="form__textarea" name="お問い合わせ内容" placeholder="入力してください"></textarea>
+                    <textarea id="textarea" class="form__textarea" name="textarea" placeholder="入力してください" required></textarea>
                   </dd>
                 </dl>
               </li>
             </ul>
             <div class="contact-form__button">
-              <input type="submit" class="form__button button" value="送信">
+              <input id="submit-button" type="submit" class="form__button button" value="送信">
             </div>
           </form>
         </div>
