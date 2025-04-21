@@ -97,7 +97,6 @@
     transition: box-shadow 0.3s;
 }
 
-
 // ハンバーガーメニュー
 
 .hamburger{
@@ -148,6 +147,9 @@
 }
 
 // ドロワーメニュー
+.no-scroll {
+    overflow: hidden;
+  }
 
 .drawer-menu{
     position: absolute;
@@ -544,16 +546,14 @@
     margin-top: 48px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(330px,330px));
     column-gap: 20px;
     row-gap: 40px;
+    justify-content: center;
     @include mq("md"){
         margin-top: 49px;
         margin-inline: auto;
-        @include mq("sp"){
-            grid-template-columns: 250px;
-            justify-content: center;
-        }
+        grid-template-columns: repeat(auto-fill,minmax(250px,250px));
     }
 }
 
@@ -609,27 +609,28 @@
     line-height: 1.538;
     @include mq("md"){
         margin-top: 10px;
+        line-height: calc(20/13);
     }
 }
 
 // ニュースセクション
 .news{
-    padding: 80px 0 80px;
+    padding: 80px 0 53px;
     background-color: $beige-news;
     @include mq("md"){
-        padding: 60px 0;
+        padding: 60px 0 39px;
     }
 }
 
 .news__items{
-    margin-top: 38px;
+    margin-top: 12px;
     width: 100%;
     max-width: 1080px;
     padding: 0 25px;
     margin-left: auto;
     margin-right: auto;
     @include mq("md"){
-        margin-top: 40px;
+        margin-top: 18px;
         padding-left: 30px;
         padding-right: 30px;
     }
@@ -637,32 +638,21 @@
 
 .news__item{
     width: 100%;
-    padding-bottom: 26px;
-    @include mq("md"){
-        padding-bottom: 22px;
-    }
-}
-.news__item:not(:first-child){
-    margin-top: 27px;
-    @include mq("md"){
-        margin-top: 21px;
-    }
 }
 
 .news__item:not(:last-child){
     border-bottom: 1px solid $gray-news-line;
 }
 
-.news__item:last-child{
-    padding-bottom: 0;
-}
-
 .news__item-link{
+    padding-top: 26px;
+    padding-bottom: 27px;
     display: flex;
     align-items: center;
-    width: fit-content;
     @include mq("md"){
         display: block;
+        padding-top: 22px;
+        padding-bottom: 21px;
     }
 }
 
@@ -767,12 +757,10 @@
 
 .contact__text-box{
     margin-top: 60px;
-    padding-left: calc(100% * 132/600);
-    padding-right: calc(100% * 202/600);
-    @include mq("md"){
+    margin-right: 70px;
+    @include mq("lg"){
         margin-top: 50px;
-        padding-left: 0;
-        padding-right: 0;
+        margin-right: 0;
     }
 }
 
@@ -791,7 +779,7 @@
 .contact__button{
     margin-top: 20px;
     padding: 15.5px 0 19.5px;
-    max-width: 266px;
+    width: 266px;
     font-size: 16px;
     letter-spacing: 0.05em;
     border-radius: 6px;
@@ -1118,6 +1106,12 @@
     opacity: 1;
 }
 
+.modal__bg{
+    position: absolute;
+    width: 100%;
+    height: inherit;
+}
+
 .modal__body{
     width: 460px;
     height: 500px;
@@ -1149,6 +1143,7 @@
     display: block;
     width: 10px;
     height: 10px;
+    cursor: pointer;
 }
 
 .modal__close-button::before,
@@ -1263,7 +1258,7 @@
 }
 
 .form__item-radio{
-    margin-top: 30px;
+    margin-top: 32px;
     @include mq("md"){
         margin-top: 20px;
     }
@@ -1286,8 +1281,9 @@
 
 .form__label{
     width: 27.7%;
-    padding: 12px 0 11px;
+    padding-top: 12px;
     @include mq("md"){
+        line-height: 1;
         width: 100%;
         padding: 0 0 4px;
     }
@@ -1311,6 +1307,7 @@
 
 .radio__label{
     width: 100%;
+    line-height: 1;
 }
 
 .form__label-text{
@@ -1338,7 +1335,7 @@
 .form__input-text,
 .form__textarea{
     width: 100%;
-    padding: 8px 12px 9px;
+    padding: 8px 12px 8px;
     background-color: $beige-news;
     @include mq("md"){
         padding: 7px 12px 9px;

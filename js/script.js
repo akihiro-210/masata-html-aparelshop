@@ -24,10 +24,29 @@
     });
   });
 
+  $(window).on('load', function() {
+    // ページのURLを取得
+    const url = $(location).attr('href'),
+    // headerの高さを取得
+    headerHeight = $('header').outerHeight();
+    // urlに「#」が含まれていれば
+    if(url.indexOf("#") != -1){
+      // urlを#で分割して配列に格納
+      const anchor = url.split("#"),
+      // 分割した最後の文字列（#◯◯の部分）をtargetに代入
+      target = $('#' + anchor[anchor.length - 1]),
+      // リンク先の位置からheaderHeightの高さを引いた値をpositionに代入
+      position = Math.floor(target.offset().top) - headerHeight;
+      // positionの位置に移動
+      $("html, body").animate({scrollTop:position}, 200, "linear");
+    }
+  });
+
 // ハンバーガーメニュー
   $(".js-hamburger,.js-drawer .drawer-menu__item a").click(function () {
     $(".js-hamburger").toggleClass("is-active");
     $(".js-drawer").fadeToggle();
+    $("body").toggleClass("no-scroll")
   });
 
 
@@ -69,10 +88,12 @@
       modal = $(".js-modal");
     //開くボタンをクリックしたらモーダルを表示する
     open.on("click", function () {
-      modal.addClass("is-open");
+      modal.addClass("is-open"),
+      $("body").addClass("no-scroll");
     });
     //閉じるボタンをクリックしたらモーダルを閉じる
-    close.add(modal).on("click", function () {
-      modal.removeClass("is-open");
+    close.on("click", function () {
+      modal.removeClass("is-open"),
+      $("body").removeClass("no-scroll");
     });
   });
