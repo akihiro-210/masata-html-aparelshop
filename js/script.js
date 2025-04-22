@@ -42,26 +42,6 @@
       },200);
     }
   });
-  // 
-  // $(window).on('load', function () {
-  //   // ブラウザの自動スクロールを無効にする
-  //   if ('scrollRestoration' in history) {
-  //     history.scrollRestoration = 'manual';
-  //   }
-  //   const url = $(location).attr('href');
-  //   const headerHeight = $('header').outerHeight();
-  //   if (url.indexOf("#") !== -1) {
-  //     const anchor = url.split("#");
-  //     const targetId = anchor[anchor.length - 1];
-  //     setTimeout(() => {
-  //       const target = $('#' + targetId);
-  //       if (target.length) {
-  //         const position = Math.floor(target.offset().top) - headerHeight;
-  //         $("html, body").animate({ scrollTop: position }, 300, "linear");
-  //       }
-  //     }, 100);
-  //   }
-  // });
 
 // ハンバーガーメニュー
   $(".js-hamburger,.js-drawer .drawer-menu__item a").click(function () {
