@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     history.replaceState(null, null, window.location.pathname + window.location.search);
     window.scrollTo(0, 0); // Safari用に強制スクロールトップ
   }
-  // jQueryが必要な場合
+
   $(window).on("load", function () {
     if (tempHash) {
       const $target = $(tempHash);
