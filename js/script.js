@@ -9,47 +9,60 @@
     }
   });
 
-// ページスクロール時にヘッダー高さ分下げる（セクションタイトルとヘッダーの被り防止）
-  $(function () {
-    // ヘッダーの高さ取得
-    const headerHeight = $(".js-header").height();
-    $('a[href^="#"]').click(function () {
-      const speed = 200;
-      let href = $(this).attr("href");
-      let target = $(href == "#" || href == "" ? "html" : href);
-      // ヘッダーの高さ分下げる
-      let position = target.offset().top - headerHeight;
-      $("body,html").animate({ scrollTop: position }, speed, "linear");
-      return false;
-    });
+// ヘッダー高さを考慮したページスクロール
+document.addEventListener("DOMContentLoaded", () => {
+  const tempHash = window.location.hash;
+  if (tempHash) {
+    // ブラウザによる自動スクロールを阻止
+    history.replaceState(null, null, window.location.pathname + window.location.search);
+    window.scrollTo(0, 0); // Safari用に強制スクロールトップ
+  }
+  // jQueryが必要な場合
+  $(window).on("load", function () {
+    if (tempHash) {
+      const $target = $(tempHash);
+      // DOMが完全に反映されていないケースへの対処
+      const tryScroll = () => {
+        const headerHeight = $(".js-header").height();
+        if ($target.length && $target.offset()) {
+          const position = $target.offset().top - headerHeight;
+          $("html, body").animate({ scrollTop: position }, 500, "swing");
+          // hashを戻す（必要であれば）
+          history.replaceState(null, null, tempHash);
+        } else {
+          setTimeout(tryScroll, 100);
+        }
+      };
+      setTimeout(tryScroll, 600);
+    }
   });
-// ヘッダー高さ分を考慮した他ページへのアンカーリンク遷移
-  $(window).on('load', function() {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-    const url = $(location).attr('href'),
-    headerHeight = $('header').height();
-    // urlに「#」が含まれていれば
-    if(url.indexOf("#") != -1){
-      // urlを#で分割して配列に格納
-      const anchor = url.split("#"),
-      // 分割した最後の文字列（#◯◯の部分）をtargetに代入
-      target = $('#' + anchor[anchor.length - 1]);
-      setTimeout(() => {
-        position = target.offset().top - headerHeight;
-        $("html, body").animate({scrollTop:position}, 200, "linear");
-      },200);
-    }
+
+  // ページ内リンクのクリック
+  $('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
+    const href = $(this).attr("href");
+    const target = $(href === "#" || href === "" ? "html" : href);
+    const headerHeight = $(".js-header").height();
+    const position = target.offset().top - headerHeight;
+    $("html, body").animate({ scrollTop: position }, 500, "swing");
+    });
   });
 
 // ハンバーガーメニュー
-  $(".js-hamburger,.js-drawer .drawer-menu__item a").click(function () {
-    $(".js-hamburger").toggleClass("is-active");
+  $(".js-hamburger").click(function () {
+    $(this).toggleClass("is-active");
     $(".js-drawer").fadeToggle();
-    $("body").toggleClass("no-scroll")
+    $("body").toggleClass("no-scroll");
   });
 
+  $(".drawer-menu__item a,.js-drawer").click(function () {
+    closeDrawer();
+  });
+  function closeDrawer() {
+    $(".js-hamburger").removeClass("is-active");
+    $(".js-drawer").fadeOut();
+    $("body").removeClass("no-scroll");
+  }
 
 // スライダー
   const swiper = new Swiper(".swiper", {
