@@ -145,6 +145,7 @@ select::-ms-expand {
   height: 95px;
   background-color: transparent;
   border-bottom: 1px solid #99958F;
+  transition: background-color 0.3s ease;
 }
 @media screen and (max-width: 1024px) {
   .header {
@@ -154,7 +155,6 @@ select::-ms-expand {
 
 .header.headerColorScroll {
   background-color: #222222;
-  transition: background-color 1s ease;
 }
 
 .header__inner {
@@ -245,7 +245,7 @@ select::-ms-expand {
   width: 25px;
   height: 16px;
   cursor: pointer;
-  transition: 1s transform;
+  transition: 0.3s transform;
 }
 
 .hamburger span {
@@ -255,7 +255,7 @@ select::-ms-expand {
   width: 100%;
   height: 2px;
   background-color: #F9F2E5;
-  transition: 1s transform, 1s background-color;
+  transition: all 0.3s;
 }
 
 .hamburger span:nth-child(1) {
@@ -494,6 +494,7 @@ select::-ms-expand {
   font-size: 18px;
   letter-spacing: 0.12em;
   line-height: 1.222;
+  font-weight: 400;
 }
 @media screen and (max-width: 768px) {
   .fv__text--small {
@@ -553,7 +554,7 @@ select::-ms-expand {
     order: 2;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 375px) {
+@media screen and (max-width: 768px) and (max-width: 376px) {
   .about__box-img {
     max-width: 240px;
   }
@@ -581,7 +582,7 @@ select::-ms-expand {
     font-size: 20px;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 375px) {
+@media screen and (max-width: 768px) and (max-width: 376px) {
   .about__text-vertical {
     font-size: 14px;
     line-height: 2.143;
@@ -596,7 +597,7 @@ select::-ms-expand {
   line-height: 2;
   font-weight: 300;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
   .about__text {
     font-size: 14px;
     margin-top: -80px;
@@ -607,10 +608,10 @@ select::-ms-expand {
 .about__button {
   margin-top: 40px;
   width: 204px;
-  padding: 16px 57px 20px;
+  padding: 18px 57px 18px;
   font-size: 16px;
   letter-spacing: 0.05em;
-  line-height: 1.188;
+  line-height: 1.1875;
   border-radius: 6px;
   font-family: "Noto Serif JP", sans-serif;
 }
@@ -621,7 +622,7 @@ select::-ms-expand {
     height: 48px;
     padding: 14px 40px;
     font-size: 14px;
-    line-height: 1.214;
+    line-height: 1.4285714286;
   }
 }
 
@@ -682,6 +683,20 @@ select::-ms-expand {
   }
 }
 
+.tab__button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+  display: block;
+  height: 1px;
+  background-color: #F9F2E5;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.3s;
+  z-index: 1;
+}
+
 .tab__button::after {
   content: "";
   position: absolute;
@@ -696,24 +711,33 @@ select::-ms-expand {
   background-color: #707070;
 }
 
-.tab__button1::after {
+.tab__button1::after,
+.tab__button1::before {
   width: 170px;
 }
 @media screen and (max-width: 768px) {
-  .tab__button1::after {
+  .tab__button1::after,
+  .tab__button1::before {
     width: 148px;
   }
 }
 
-.tab__button2::after {
+.tab__button2::after,
+.tab__button2::before {
   width: 137px;
 }
 @media screen and (max-width: 768px) {
-  .tab__button2::after {
+  .tab__button2::after,
+  .tab__button2::before {
     width: 119px;
   }
 }
 
+@media (hover: hover) {
+  .tab__button:not(.is-active):hover::before {
+    transform: scale(1, 1);
+  }
+}
 .tab__content {
   display: none;
 }
@@ -721,12 +745,17 @@ select::-ms-expand {
 .tab__content.is-active {
   display: block;
 }
+@media screen and (max-width: 768px) {
+  .tab__content.is-active {
+    padding-inline: 32.5px;
+  }
+}
 
 .service__cards {
   margin-top: 48px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 330px));
+  grid-template-columns: 1fr 1fr 1fr;
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 40px;
@@ -736,12 +765,19 @@ select::-ms-expand {
   .service__cards {
     margin-top: 49px;
     margin-inline: auto;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 .service__card {
   box-shadow: 3px 3px 6px rgba(29, 29, 29, 0.75);
+}
+@media screen and (max-width: 768px) {
+  .service__card {
+    max-width: 480px;
+  }
 }
 
 .card__img-body {
@@ -752,7 +788,7 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 7px 0 6px;
+  padding: 6.5px 0 6.5px;
   background-color: #332F27;
   display: inline-block;
   text-align: center;
@@ -794,6 +830,7 @@ select::-ms-expand {
   font-size: 13px;
   letter-spacing: 0.05em;
   line-height: 1.538;
+  font-weight: 300;
 }
 @media screen and (max-width: 768px) {
   .card__text {
@@ -863,7 +900,6 @@ select::-ms-expand {
 
 .news__item-date {
   font-size: 14px;
-  letter-spacing: 0;
   color: #222222;
   font-family: "Noto Sans JP", sans-serif;
 }
@@ -880,9 +916,8 @@ select::-ms-expand {
   display: inline-block;
   width: 88px;
   text-align: center;
-  letter-spacing: 0;
   margin-left: 30px;
-  padding: 6.5px 0 8.5px;
+  padding: 7.5px 0 7.5px;
   line-height: 1.2;
   background-color: #332F27;
   color: #FFFFFF;
@@ -900,7 +935,6 @@ select::-ms-expand {
   margin-left: 30px;
   font-size: 15px;
   color: #222222;
-  letter-spacing: 0;
   line-height: 1.2;
 }
 @media screen and (max-width: 768px) {
@@ -989,7 +1023,7 @@ select::-ms-expand {
 
 .contact__button {
   margin-top: 20px;
-  padding: 15.5px 0 19.5px;
+  padding: 17.5px 0 17.5px;
   width: 266px;
   font-size: 16px;
   letter-spacing: 0.05em;
@@ -1066,11 +1100,13 @@ select::-ms-expand {
   font-size: 46px;
   letter-spacing: 0.05em;
   line-height: 1.1739130435;
+  font-weight: 400;
 }
 @media screen and (max-width: 768px) {
   .about-fv__title {
     font-size: 36px;
     font-weight: 500;
+    letter-spacing: 0;
   }
 }
 
@@ -1102,19 +1138,18 @@ select::-ms-expand {
   font-size: 24px;
   font-weight: 500;
   letter-spacing: 0.05em;
-  line-height: 1.667;
+  line-height: 1.6666666667;
   text-align: center;
 }
 @media screen and (max-width: 768px) {
   .message__heading-main {
     font-size: 20px;
-    line-height: 1.733;
+    line-height: 1.7333333333;
   }
 }
-@media screen and (max-width: 768px) and (max-width: 375px) {
+@media screen and (max-width: 768px) and (max-width: 376px) {
   .message__heading-main {
     font-size: 15px;
-    line-height: 1.733;
   }
 }
 
@@ -1138,6 +1173,7 @@ select::-ms-expand {
 .message__text,
 .message__sign {
   font-family: "roboto", "Noto Sans JP", sans-serif;
+  font-weight: 300;
 }
 
 .message__container {
@@ -1271,7 +1307,6 @@ select::-ms-expand {
   font-size: 14px;
   font-weight: 300;
   font-family: "roboto", "Noto Sans JP", sans-serif;
-  letter-spacing: 0;
   line-height: 1.2142857143;
 }
 @media screen and (max-width: 768px) {
@@ -1314,6 +1349,11 @@ select::-ms-expand {
 
 .company__map-icon {
   cursor: pointer;
+  padding: 0;
+  text-align: left;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: opacity 0.3s;
 }
 
 .company__map-underline {
@@ -1321,6 +1361,11 @@ select::-ms-expand {
   position: relative;
 }
 
+@media (hover: hover) {
+  .company__map-icon:hover {
+    opacity: 0.5;
+  }
+}
 .company__map-underline::after {
   position: absolute;
   top: 2px;
@@ -1591,7 +1636,6 @@ select::-ms-expand {
 
 .form__label-text {
   font-size: 14px;
-  letter-spacing: 0;
   line-height: 1.4285714286;
 }
 
@@ -1607,7 +1651,7 @@ select::-ms-expand {
 }
 
 .form__input-text::-moz-placeholder, .form__textarea::-moz-placeholder {
-  font-family: "roboto", "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .form__label-text,
@@ -1615,7 +1659,7 @@ select::-ms-expand {
 .form__input-text::placeholder,
 .radio__input-text,
 .form__textarea::placeholder {
-  font-family: "roboto", "Noto Sans JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .form__input-text,
@@ -1639,7 +1683,6 @@ select::-ms-expand {
 
 .form__input-text::-moz-placeholder, .form__textarea::-moz-placeholder {
   font-size: 14px;
-  letter-spacing: 0;
   line-height: 1.2142857143;
 }
 
@@ -1647,7 +1690,6 @@ select::-ms-expand {
 .form__textarea::placeholder,
 .radio__input-text {
   font-size: 14px;
-  letter-spacing: 0;
   line-height: 1.2142857143;
 }
 @media screen and (max-width: 768px) {
@@ -1689,6 +1731,8 @@ select::-ms-expand {
 @media screen and (max-width: 768px) {
   .radio__input-text {
     margin-left: 12px;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 
@@ -1788,6 +1832,7 @@ select::-ms-expand {
   color: #F9F2E5;
   letter-spacing: 0.05em;
   line-height: 1.211;
+  font-weight: 400;
   position: relative;
   display: flex;
 }
