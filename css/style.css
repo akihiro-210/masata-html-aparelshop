@@ -314,7 +314,7 @@ select::-ms-expand {
   display: inline-block;
   width: 198px;
   text-align: center;
-  line-height: 1.222;
+  line-height: 1.2222222222;
 }
 
 .drawer-menu__item:not(:first-child) {
@@ -478,13 +478,13 @@ select::-ms-expand {
   font-size: 54px;
   font-weight: 500;
   letter-spacing: 0.05em;
-  line-height: 1.203;
+  line-height: 1.2037037037;
 }
 @media screen and (max-width: 768px) {
   .fv__text--large {
     font-size: 36px;
     letter-spacing: 0;
-    line-height: 1.222;
+    line-height: 1.25;
     text-align: center;
   }
 }
@@ -493,14 +493,14 @@ select::-ms-expand {
   margin-top: 12px;
   font-size: 18px;
   letter-spacing: 0.12em;
-  line-height: 1.222;
+  line-height: 1.2222222222;
   font-weight: 400;
 }
 @media screen and (max-width: 768px) {
   .fv__text--small {
     font-size: 14px;
     letter-spacing: 0;
-    line-height: 1.214;
+    line-height: 1.5;
     text-align: center;
   }
 }
@@ -531,15 +531,18 @@ select::-ms-expand {
 
 .about__box {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 360px 123px;
   -moz-column-gap: 37px;
        column-gap: 37px;
   justify-content: center;
+  max-width: 520px;
+  margin-inline: auto;
 }
 @media screen and (max-width: 768px) {
   .about__box {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
     row-gap: 40px;
+    align-items: center;
   }
 }
 
@@ -562,12 +565,13 @@ select::-ms-expand {
 
 .about__box-text {
   margin-top: 24px;
-  margin-inline: auto;
 }
 @media screen and (max-width: 768px) {
   .about__box-text {
     order: 1;
     margin-top: 0;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -1164,7 +1168,7 @@ select::-ms-expand {
   .message__heading-sub {
     margin-top: 20px;
     font-size: 14px;
-    line-height: 1.857;
+    line-height: 1.8571428571;
     text-align: left;
   }
 }
@@ -1174,6 +1178,7 @@ select::-ms-expand {
 .message__sign {
   font-family: "roboto", "Noto Sans JP", sans-serif;
   font-weight: 300;
+  text-rendering: auto;
 }
 
 .message__container {
@@ -1511,8 +1516,14 @@ select::-ms-expand {
   font-family: "roboto", "Noto Sans JP", sans-serif;
   font-size: 15px;
   font-weight: 300;
-  letter-spacing: 0.049em;
+  letter-spacing: 0.05em;
   line-height: 1.8666666667;
+  word-break: keep-all;
+}
+@media screen and (max-width: 768px) {
+  .contact-form__heading {
+    word-break: normal;
+  }
 }
 
 .form__inner {
@@ -1769,7 +1780,7 @@ select::-ms-expand {
 }
 @media screen and (max-width: 768px) {
   .contact-form__button {
-    margin-top: 15px;
+    margin-top: 13px;
   }
 }
 
@@ -1786,8 +1797,8 @@ select::-ms-expand {
   .form__button {
     width: 169px;
     font-size: 14px;
-    padding: 14px;
-    line-height: 1.214;
+    padding: 13.5px 14px;
+    line-height: 1.4285714286;
   }
 }
 
@@ -1831,7 +1842,7 @@ select::-ms-expand {
   font-size: 38px;
   color: #F9F2E5;
   letter-spacing: 0.05em;
-  line-height: 1.211;
+  line-height: 1.2105263158;
   font-weight: 400;
   position: relative;
   display: flex;
@@ -1841,7 +1852,7 @@ select::-ms-expand {
   .section-title-reverse {
     padding-left: 30px;
     font-size: 32px;
-    line-height: 1.219;
+    line-height: 1.21875;
   }
 }
 
