@@ -179,7 +179,7 @@
     display: inline-block;
     width: 198px;
     text-align: center;
-    line-height: 1.222;
+    line-height: calc(22/18);
 }
 
 .drawer-menu__item:not(:first-child){
@@ -333,11 +333,11 @@
     font-size: 54px;
     font-weight: $medium;
     letter-spacing: 0.05em;
-    line-height: 1.203;
+    line-height: calc(65/54);
     @include mq("md"){
         font-size: 36px;
         letter-spacing: 0;
-        line-height: 1.222;
+        line-height: calc(45/36);
         text-align: center;
     }
 }
@@ -346,12 +346,12 @@
     margin-top: 12px;
     font-size: 18px;
     letter-spacing: 0.12em;
-    line-height: 1.222;
+    line-height: calc(22/18);
     font-weight: $regular;
     @include mq("md"){
         font-size: 14px;
         letter-spacing: 0;
-        line-height: 1.214;
+        line-height: calc(21/14);
         text-align: center;
         }
 }
@@ -380,13 +380,15 @@
 
 .about__box{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 360px 123px;
     column-gap: 37px;
     justify-content: center;
+    max-width: 520px;
+    margin-inline: auto;
     @include mq("md"){
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         row-gap: 40px;
-
+        align-items: center;
     }
 }
 
@@ -405,10 +407,11 @@
 
 .about__box-text{
     margin-top: 24px;
-    margin-inline: auto;
     @include mq("md"){
         order: 1;
         margin-top: 0;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -933,7 +936,7 @@
     @include mq("md"){
         margin-top: 20px;
         font-size: 14px;
-        line-height: 1.857;
+        line-height: calc(26/14);
         text-align: left;
     }
 }
@@ -943,6 +946,7 @@
 .message__sign{
     font-family: $second-font;
     font-weight: $light;
+    text-rendering: auto;
 }
 
 .message__container{
@@ -1246,8 +1250,12 @@
     font-family: $second-font;
     font-size: 15px;
     font-weight: $light;
-    letter-spacing: 0.049em;
+    letter-spacing: 0.05em;
     line-height: calc(28/15);
+    word-break: keep-all;
+    @include mq("md"){
+        word-break: normal;
+    }
 }
 
 // コンタクトフォーム
@@ -1453,7 +1461,7 @@
 .contact-form__button{
     margin-top: 33px;
     @include mq("md"){
-        margin-top: 15px;
+        margin-top: 13px;
     }
 }
 
@@ -1468,8 +1476,8 @@
     @include mq("md"){
         width: 169px;
         font-size: 14px;
-        padding: 14px;
-        line-height: 1.214;
+        padding: 13.5px 14px;
+        line-height: calc(20/14);
     }
 }
 
@@ -1510,14 +1518,14 @@
     font-size: 38px;
     color: $white;
     letter-spacing: 0.05em;
-    line-height: 1.211;
+    line-height: calc(46/38);
     font-weight: $regular;
     position: relative;
     display: flex;
     @include mq("md"){
         padding-left: 30px;
         font-size: 32px;
-        line-height: 1.219;
+        line-height: calc(39/32);
     }
 }
 
