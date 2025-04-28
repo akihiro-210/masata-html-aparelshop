@@ -399,9 +399,9 @@
     @include mq("md"){
         aspect-ratio: 240/333;
         order: 2;
-        @include mq("sp"){
+    }
+    @include mq("sp"){
             max-width: 240px;
-        }
     }
 }
 
@@ -422,11 +422,9 @@
     line-height: calc(41/22);
     @include mq("md"){
         font-size: 20px;
-        @include mq("sp"){
-            font-size: 14px;
-            line-height: 2.143;
-            letter-spacing: 0.285em;
-        }
+        font-size: 14px;
+        line-height: 2.143;
+        letter-spacing: 0.285em;
     }
 }
 
@@ -436,7 +434,7 @@
     letter-spacing: 0.05em;
     line-height: 2;
     font-weight: $light;
-    @include mq("sp"){
+    @include mq("md"){
         font-size: 14px;
         margin-top: -80px;
         line-height: 1.857;
@@ -859,7 +857,7 @@
 // ファーストビュー
 .about-fv{
     width: 100%;
-    height: calc(100vh * 445/665);
+    height: calc(100vh * 543/814);
 }
 
 .about-fv__inner{
@@ -921,9 +919,9 @@
     @include mq("md"){
         font-size: 20px;
         line-height: calc(26/15);
-        @include mq("sp"){
+    }
+    @include mq("sp"){
             font-size: 15px;
-        }
     }
 }
 
@@ -1069,13 +1067,20 @@
 }
 
 .company__textbox{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: column;
     row-gap: 19px;
     @include mq("md"){
-        grid-template-columns: auto;
         row-gap: 7px;
+    }
+}
+
+.company__text-2{
+    display: inline-block;
+    margin-left: 10px;
+    @include mq("md"){
+        margin-left: 0;
+        margin-top: 7px;
     }
 }
 
@@ -1097,7 +1102,7 @@
 
 .company__map-icon{
     cursor: pointer;
-    padding: 0;
+    padding: 0 16px 0 0;
     text-align: left;
     width: fit-content;
     transition: opacity 0.3s;
@@ -1116,7 +1121,7 @@
 
 .company__map-underline::after{
     position: absolute;
-    top: 2px;
+    top: 3px;
     right: -14px;
     content: "";
     display: block;
