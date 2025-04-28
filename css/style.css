@@ -346,10 +346,11 @@ select::-ms-expand {
 }
 
 .drawer-menu__link--contact {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 198px;
-  text-align: center;
-  padding: 14px;
+  height: 50px;
   border: 1px solid #F9F2E5;
   border-radius: 6px;
   transition: box-shadow 0.3s;
@@ -506,7 +507,7 @@ select::-ms-expand {
 }
 
 .about {
-  padding: 80px 0 79px;
+  padding: 80px 0;
   background-color: #272625;
 }
 @media screen and (max-width: 768px) {
@@ -601,17 +602,15 @@ select::-ms-expand {
   .about__text {
     font-size: 14px;
     margin-top: -80px;
-    line-height: 1.857;
+    line-height: 1.8571428571;
   }
 }
 
 .about__button {
   margin-top: 40px;
   width: 204px;
-  padding: 18px 57px 18px;
   font-size: 16px;
   letter-spacing: 0.05em;
-  line-height: 1.1875;
   border-radius: 6px;
   font-family: "Noto Serif JP", sans-serif;
 }
@@ -619,10 +618,7 @@ select::-ms-expand {
   .about__button {
     margin-top: 30px;
     width: 173px;
-    height: 48px;
-    padding: 14px 40px;
     font-size: 14px;
-    line-height: 1.4285714286;
   }
 }
 
@@ -788,14 +784,14 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 6.5px 0 6.5px;
   background-color: #332F27;
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 79px;
+  height: 30px;
   font-size: 14px;
   color: #F9F2E5;
-  line-height: 1.2142857143;
   letter-spacing: 0.05em;
 }
 
@@ -829,7 +825,7 @@ select::-ms-expand {
   font-family: "roboto", "Noto Sans JP", sans-serif;
   font-size: 13px;
   letter-spacing: 0.05em;
-  line-height: 1.538;
+  line-height: 1.5384615385;
   font-weight: 300;
 }
 @media screen and (max-width: 768px) {
@@ -913,21 +909,20 @@ select::-ms-expand {
 
 .news__item-tag {
   font-size: 10px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 88px;
-  text-align: center;
+  height: 27px;
   margin-left: 30px;
-  padding: 7.5px 0 7.5px;
-  line-height: 1.2;
   background-color: #332F27;
   color: #FFFFFF;
 }
 @media screen and (max-width: 768px) {
   .news__item-tag {
     width: 80px;
-    padding: 4.5px 20px;
+    height: 23px;
     margin-left: 30px;
-    line-height: 1.4;
   }
 }
 
@@ -971,7 +966,7 @@ select::-ms-expand {
 }
 @media screen and (max-width: 1024px) and (max-width: 768px) {
   .contact__container1 {
-    padding: 60px 0 80px;
+    padding: 58px 0 80px;
   }
 }
 
@@ -1023,20 +1018,16 @@ select::-ms-expand {
 
 .contact__button {
   margin-top: 20px;
-  padding: 17.5px 0 17.5px;
   width: 266px;
   font-size: 16px;
   letter-spacing: 0.05em;
   border-radius: 6px;
-  line-height: 1.1875;
 }
 @media screen and (max-width: 768px) {
   .contact__button {
     margin-top: 17px;
-    padding: 13px 30px;
     width: 227px;
     font-size: 14px;
-    line-height: 1.4285714286;
   }
 }
 
@@ -1791,19 +1782,15 @@ select::-ms-expand {
 
 .form__button {
   width: 183px;
-  text-align: center;
-  padding: 16px;
+  padding: 0;
   font-size: 16px;
   letter-spacing: 0.05em;
-  line-height: 1.4375;
   border-radius: 6px;
 }
 @media screen and (max-width: 768px) {
   .form__button {
     width: 169px;
     font-size: 14px;
-    padding: 13.5px 14px;
-    line-height: 1.4285714286;
   }
 }
 
@@ -1915,10 +1902,17 @@ select::-ms-expand {
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-inline: auto;
   border: 0.5px solid #F9F2E5;
   color: #F9F2E5;
   transition: box-shadow 0.3s;
+  height: 55px;
+}
+@media screen and (max-width: 768px) {
+  .button {
+    height: 48px;
+  }
 }
 
 @media (hover: hover) {
@@ -1933,7 +1927,7 @@ select::-ms-expand {
 .button::after {
   content: "";
   position: absolute;
-  top: 24px;
+  top: 23px;
   right: 20px;
   height: 8px;
   width: 8px;
