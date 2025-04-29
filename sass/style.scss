@@ -592,9 +592,6 @@
 
 .service__card{
     box-shadow: 3px 3px 6px rgba($color: $shadow, $alpha: 0.75);
-    @include mq("md"){
-        max-width: 480px;
-    }
 }
 
 .card__img-body{

@@ -774,11 +774,6 @@ select::-ms-expand {
 .service__card {
   box-shadow: 3px 3px 6px rgba(29, 29, 29, 0.75);
 }
-@media screen and (max-width: 768px) {
-  .service__card {
-    max-width: 480px;
-  }
-}
 
 .card__img-body {
   position: relative;
