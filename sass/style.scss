@@ -601,7 +601,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    // padding: 6.5px 0 6.5px;
     background-color: $gray-tag;
     display: flex;
     justify-content: center;
@@ -610,7 +609,6 @@
     height: 30px;
     font-size: 14px;
     color: $white;
-    // line-height: calc(17/14);
     letter-spacing: 0.05em;
 }
 
@@ -721,16 +719,13 @@
     width: 88px;
     height: 27px;
     margin-left: 30px;
-    // padding: 7.5px 0 7.5px;
-    // line-height: calc(12/10);
     background-color: $gray-tag;
     color: $white2;
+    line-height: initial;
     @include mq("md"){
         width: 80px;
         height: 23px;
-        // padding: 4.5px 20px;
         margin-left: 30px;
-        // line-height: calc(14/10);
     }
 }
 
@@ -813,18 +808,15 @@
 
 .contact__button{
     margin-top: 20px;
-    // padding: 17.5px 0 17.5px;
     width: 266px;
     font-size: 16px;
     letter-spacing: 0.05em;
     border-radius: 6px;
-    // line-height: calc(19/16);
+    line-height: initial;
     @include mq("md"){
         margin-top: 17px;
-        // padding: 13px 30px;
         width: 227px;
         font-size: 14px;
-        // line-height: calc(20/14);
     }
 }
 
@@ -863,6 +855,9 @@
 .about-fv{
     width: 100%;
     height: calc(100vh * 543/814);
+    @include mq("md"){
+        height: calc(100vh * 445/665);
+    }
 }
 
 .about-fv__inner{
@@ -1282,7 +1277,7 @@
 }
 
 .contact-form-box{
-    margin-top: 20px;
+    margin-top: 22px;
     width: 100%;
     padding: 60px 25px;
     background-color: $black-about;
@@ -1323,7 +1318,7 @@
 }
 
 .form__item-textarea{
-    margin-top: 34px;
+    margin-top: 35px;
     @include mq("md"){
         margin-top: 20px;
     }
@@ -1480,13 +1475,11 @@
     padding: 0;
     font-size: 16px;
     letter-spacing: 0.05em;
-    // line-height: calc(23/16);
     border-radius: 6px;
+    line-height: initial;
     @include mq("md"){
         width: 169px;
         font-size: 14px;
-        // padding: 13.5px 14px;
-        // line-height: calc(20/14);
     }
 }
 

@@ -917,6 +917,7 @@ select::-ms-expand {
   margin-left: 30px;
   background-color: #332F27;
   color: #FFFFFF;
+  line-height: initial;
 }
 @media screen and (max-width: 768px) {
   .news__item-tag {
@@ -1022,6 +1023,7 @@ select::-ms-expand {
   font-size: 16px;
   letter-spacing: 0.05em;
   border-radius: 6px;
+  line-height: initial;
 }
 @media screen and (max-width: 768px) {
   .contact__button {
@@ -1067,6 +1069,11 @@ select::-ms-expand {
 .about-fv {
   width: 100%;
   height: 66.7076167076vh;
+}
+@media screen and (max-width: 768px) {
+  .about-fv {
+    height: 66.9172932331vh;
+  }
 }
 
 .about-fv__inner {
@@ -1537,7 +1544,7 @@ select::-ms-expand {
 }
 
 .contact-form-box {
-  margin-top: 20px;
+  margin-top: 22px;
   width: 100%;
   padding: 60px 25px;
   background-color: #272625;
@@ -1586,7 +1593,7 @@ select::-ms-expand {
 }
 
 .form__item-textarea {
-  margin-top: 34px;
+  margin-top: 35px;
 }
 @media screen and (max-width: 768px) {
   .form__item-textarea {
@@ -1786,6 +1793,7 @@ select::-ms-expand {
   font-size: 16px;
   letter-spacing: 0.05em;
   border-radius: 6px;
+  line-height: initial;
 }
 @media screen and (max-width: 768px) {
   .form__button {
