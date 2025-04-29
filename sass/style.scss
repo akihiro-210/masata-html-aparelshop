@@ -110,6 +110,10 @@
     transition: 0.3s transform;
 }
 
+.hamburger:focus-visible{
+    outline: 1px solid #007aff;
+}
+
 .hamburger span{
     position: absolute;
     left: 0;
@@ -1106,6 +1110,10 @@
     text-align: left;
     width: fit-content;
     transition: opacity 0.3s;
+}
+
+.company__map-icon:focus-visible{
+    outline: 1px solid #007aff;
 }
 
 .company__map-underline{
